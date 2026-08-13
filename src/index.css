@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background: #0B0D10;
+  }
+  
+  body {
+    @apply bg-obsidian text-text-primary font-body antialiased;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
+  * {
+    @apply border-border;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+  
+  .section-title {
+    @apply font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6;
+  }
+  
+  .section-subtitle {
+    @apply text-text-secondary text-lg max-w-2xl;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10;
+  }
+}
