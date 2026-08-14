@@ -24,6 +24,66 @@ import {
   FaCopy,
 } from 'react-icons/fa'
 
+// ── Smart Screenshot Image Component ──
+const ScreenshotImage = ({
+  src,
+  alt,
+  color,
+  emoji,
+  className = '',
+  index,
+}: {
+  src: string
+  alt: string
+  color: string
+  emoji: string
+  className?: string
+  index?: number
+}) => {
+  const [errored, setErrored] = useState(false)
+
+  if (errored) {
+    return (
+      <div
+        className={`bg-gradient-to-br ${color} flex flex-col items-center justify-center gap-4 w-full h-full min-h-[400px] ${className}`}
+      >
+        {/* Fake browser chrome placeholder */}
+        <div className="w-full max-w-lg bg-[#0B0D10]/60 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 mx-4">
+          <div className="flex items-center gap-2 px-4 py-2.5 bg-[#0B0D10]/80 border-b border-white/5">
+            <div className="flex gap-1.5">
+              <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/60" />
+              <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/60" />
+              <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]/60" />
+            </div>
+            <div className="flex-1 mx-3 px-3 py-1 bg-[#151A20]/80 rounded-md text-[10px] text-[#6B7280] font-['JetBrains_Mono'] truncate">
+              screenshot-coming-soon.dev
+            </div>
+          </div>
+          <div className="p-8 text-center">
+            <div className="text-5xl mb-3 opacity-80">{emoji}</div>
+            <p className="text-white/50 text-xs font-['JetBrains_Mono']">
+              Screenshot {index !== undefined ? `#${index + 1}` : ''} · Coming soon
+            </p>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div
+      className={`w-full h-full bg-[#0D1117] flex items-center justify-center overflow-hidden ${className}`}
+    >
+      <img
+        src={src}
+        alt={alt}
+        className="w-full h-full object-contain"
+        onError={() => setErrored(true)}
+      />
+    </div>
+  )
+}
+
 // ── Lightbox Component ──
 const Lightbox = ({
   screenshots,
@@ -32,8 +92,6 @@ const Lightbox = ({
   onPrev,
   onNext,
   projectTitle,
-  projectColor,
-  projectImage,
 }: {
   screenshots: string[]
   activeIndex: number
@@ -67,7 +125,10 @@ const Lightbox = ({
     {/* Prev */}
     {activeIndex > 0 && (
       <button
-        onClick={(e) => { e.stopPropagation(); onPrev() }}
+        onClick={(e) => {
+          e.stopPropagation()
+          onPrev()
+        }}
         className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-2xl bg-[#151A20] border border-[#242A32] flex items-center justify-center text-[#9AA4B2] hover:text-[#FF6B35] hover:border-[#FF6B35]/30 transition-all z-10"
       >
         <FaChevronLeft />
@@ -81,85 +142,41 @@ const Lightbox = ({
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.25 }}
-      className="max-w-6xl w-full max-h-[85vh] rounded-2xl overflow-hidden border border-[#242A32] shadow-2xl"
+      className="max-w-7xl w-full max-h-[85vh] rounded-2xl overflow-hidden shadow-2xl bg-[#0D1117]"
       onClick={(e) => e.stopPropagation()}
     >
-      <ScreenshotImage
+      <img
         src={screenshots[activeIndex]}
         alt={`${projectTitle} screenshot ${activeIndex + 1}`}
-        color={projectColor}
-        emoji={projectImage}
-        className="w-full h-full object-contain"
+        className="w-full h-full object-contain max-h-[85vh]"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement
+          target.style.display = 'none'
+        }}
       />
     </motion.div>
 
     {/* Next */}
     {activeIndex < screenshots.length - 1 && (
       <button
-        onClick={(e) => { e.stopPropagation(); onNext() }}
+        onClick={(e) => {
+          e.stopPropagation()
+          onNext()
+        }}
         className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-2xl bg-[#151A20] border border-[#242A32] flex items-center justify-center text-[#9AA4B2] hover:text-[#FF6B35] hover:border-[#FF6B35]/30 transition-all z-10"
       >
         <FaChevronRight />
       </button>
     )}
+
+    {/* Bottom hint */}
+    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 text-[10px] text-[#6B7280] font-['JetBrains_Mono']">
+      <span>← → Navigate</span>
+      <span className="w-1 h-1 rounded-full bg-[#242A32]" />
+      <span>ESC to close</span>
+    </div>
   </motion.div>
 )
-
-// ── Smart Screenshot Image Component ──
-const ScreenshotImage = ({
-  src,
-  alt,
-  color,
-  emoji,
-  className = '',
-  index,
-}: {
-  src: string
-  alt: string
-  color: string
-  emoji: string
-  className?: string
-  index?: number
-}) => {
-  const [errored, setErrored] = useState(false)
-
-  if (errored) {
-    return (
-      <div
-        className={`bg-gradient-to-br ${color} flex flex-col items-center justify-center gap-4 min-h-[220px] ${className}`}
-      >
-        {/* Fake browser chrome */}
-        <div className="w-full max-w-lg bg-[#0B0D10]/60 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 mx-4">
-          <div className="flex items-center gap-2 px-4 py-2.5 bg-[#0B0D10]/80 border-b border-white/5">
-            <div className="flex gap-1.5">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/60" />
-              <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/60" />
-              <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]/60" />
-            </div>
-            <div className="flex-1 mx-3 px-3 py-1 bg-[#151A20]/80 rounded-md text-[10px] text-[#6B7280] font-['JetBrains_Mono'] truncate">
-              screenshot-coming-soon.dev
-            </div>
-          </div>
-          <div className="p-8 text-center">
-            <div className="text-5xl mb-3 opacity-80">{emoji}</div>
-            <p className="text-white/50 text-xs font-['JetBrains_Mono']">
-              Screenshot {index !== undefined ? `#${index + 1}` : ''} · Coming soon
-            </p>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  return (
-    <img
-      src={src}
-      alt={alt}
-      className={`w-full h-full object-cover object-top ${className}`}
-      onError={() => setErrored(true)}
-    />
-  )
-}
 
 const ProjectDetail = () => {
   const { id } = useParams()
@@ -213,7 +230,7 @@ const ProjectDetail = () => {
 
   return (
     <>
-      {/* Lightbox */}
+      {/* ── Lightbox ── */}
       <AnimatePresence>
         {lightboxOpen && screenshots.length > 0 && (
           <Lightbox
@@ -241,7 +258,7 @@ const ProjectDetail = () => {
       >
         {/* ===== FULL-WIDTH SCREENSHOT HERO ===== */}
         <div className="relative w-full bg-[#0A0C0F] pt-16 md:pt-20 overflow-hidden">
-          {/* Subtle radial glow behind screenshot */}
+          {/* Subtle radial glow */}
           <div
             className={`absolute inset-0 bg-gradient-to-b ${project.color} opacity-20 pointer-events-none`}
           />
@@ -257,7 +274,6 @@ const ProjectDetail = () => {
                 Back
               </button>
 
-              {/* Right actions */}
               <div className="flex items-center gap-2">
                 <button
                   onClick={handleCopyLink}
@@ -296,6 +312,7 @@ const ProjectDetail = () => {
             <div className="rounded-t-2xl overflow-hidden border border-b-0 border-[#242A32]/70 shadow-[0_-20px_60px_rgba(0,0,0,0.5)]">
               {/* Browser bar */}
               <div className="flex items-center gap-3 px-5 py-3 bg-[#11151A] border-b border-[#242A32]/50">
+                {/* Traffic lights */}
                 <div className="flex items-center gap-1.5 flex-shrink-0">
                   <div className="w-3 h-3 rounded-full bg-[#FF5F56]" />
                   <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
@@ -317,7 +334,11 @@ const ProjectDetail = () => {
                       >
                         <span className="text-sm">{project.image}</span>
                         <span className="font-['JetBrains_Mono'] hidden sm:inline">
-                          {i === 0 ? 'Overview' : i === 1 ? 'Dashboard' : `View ${i + 1}`}
+                          {i === 0
+                            ? 'Overview'
+                            : i === 1
+                            ? 'Dashboard'
+                            : `View ${i + 1}`}
                         </span>
                         <span className="font-['JetBrains_Mono'] sm:hidden">
                           {i + 1}
@@ -344,7 +365,7 @@ const ProjectDetail = () => {
                   </span>
                 </div>
 
-                {/* Expand button */}
+                {/* Expand button in browser bar */}
                 {screenshots.length > 0 && (
                   <button
                     onClick={() => setLightboxOpen(true)}
@@ -357,7 +378,10 @@ const ProjectDetail = () => {
               </div>
 
               {/* Screenshot area */}
-              <div className="relative aspect-[16/9] bg-[#0D1117] overflow-hidden">
+              <div
+                className="relative bg-[#0D1117] overflow-hidden"
+                style={{ minHeight: '400px', maxHeight: '75vh' }}
+              >
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeScreenshot}
@@ -370,7 +394,9 @@ const ProjectDetail = () => {
                     <ScreenshotImage
                       src={
                         screenshots[activeScreenshot] ??
-                        `/src/assets/projects/screenshots/${project.id}-${activeScreenshot + 1}.png`
+                        `/src/assets/projects/screenshots/${project.id}-${
+                          activeScreenshot + 1
+                        }.png`
                       }
                       alt={`${project.title} screenshot ${activeScreenshot + 1}`}
                       color={project.color}
@@ -381,15 +407,14 @@ const ProjectDetail = () => {
                   </motion.div>
                 </AnimatePresence>
 
-                {/* Click to expand overlay */}
+                {/* Expand button - corner only, doesn't obscure image */}
                 <button
                   onClick={() => setLightboxOpen(true)}
-                  className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity bg-[#0B0D10]/40 flex items-center justify-center group"
+                  className="absolute bottom-4 right-4 z-10 group flex items-center gap-2 px-3.5 py-2 bg-[#0B0D10]/80 backdrop-blur-md border border-[#242A32] rounded-xl text-xs text-[#F5F7FA] hover:border-[#FF6B35]/40 hover:bg-[#FF6B35]/10 transition-all opacity-70 hover:opacity-100 shadow-lg"
+                  title="View fullscreen"
                 >
-                  <div className="bg-[#151A20]/90 backdrop-blur-sm border border-[#242A32] rounded-xl px-4 py-2.5 flex items-center gap-2 text-sm text-[#F5F7FA] group-hover:border-[#FF6B35]/40 transition-all">
-                    <FaExpand className="text-[#FF6B35] text-xs" />
-                    Click to expand
-                  </div>
+                  <FaExpand className="text-[#FF6B35] text-[10px] group-hover:scale-110 transition-transform" />
+                  <span className="hidden sm:inline">Expand</span>
                 </button>
 
                 {/* Screenshot nav arrows */}
@@ -398,7 +423,7 @@ const ProjectDetail = () => {
                     {activeScreenshot > 0 && (
                       <button
                         onClick={() => setActiveScreenshot((p) => p - 1)}
-                        className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-xl bg-[#0B0D10]/80 backdrop-blur-sm border border-[#242A32] flex items-center justify-center text-[#9AA4B2] hover:text-[#FF6B35] hover:border-[#FF6B35]/40 transition-all"
+                        className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-xl bg-[#0B0D10]/80 backdrop-blur-sm border border-[#242A32] flex items-center justify-center text-[#9AA4B2] hover:text-[#FF6B35] hover:border-[#FF6B35]/40 transition-all z-10"
                       >
                         <FaChevronLeft className="text-xs" />
                       </button>
@@ -406,7 +431,7 @@ const ProjectDetail = () => {
                     {activeScreenshot < screenshots.length - 1 && (
                       <button
                         onClick={() => setActiveScreenshot((p) => p + 1)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-xl bg-[#0B0D10]/80 backdrop-blur-sm border border-[#242A32] flex items-center justify-center text-[#9AA4B2] hover:text-[#FF6B35] hover:border-[#FF6B35]/40 transition-all"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-xl bg-[#0B0D10]/80 backdrop-blur-sm border border-[#242A32] flex items-center justify-center text-[#9AA4B2] hover:text-[#FF6B35] hover:border-[#FF6B35]/40 transition-all z-10"
                       >
                         <FaChevronRight className="text-xs" />
                       </button>
@@ -439,7 +464,7 @@ const ProjectDetail = () => {
                       color={project.color}
                       emoji={project.image}
                       index={i}
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full"
                     />
                     {activeScreenshot === i && (
                       <div className="absolute inset-0 border-2 border-[#FF6B35] rounded-lg pointer-events-none" />
@@ -513,7 +538,8 @@ const ProjectDetail = () => {
                   {screenshots.length > 0 && (
                     <span className="flex items-center gap-1.5 text-xs text-[#6B7280]">
                       <FaEye className="text-[#FF6B35]/50" />
-                      {screenshots.length} screenshot{screenshots.length > 1 ? 's' : ''}
+                      {screenshots.length} screenshot
+                      {screenshots.length > 1 ? 's' : ''}
                     </span>
                   )}
                 </div>
@@ -569,8 +595,11 @@ const ProjectDetail = () => {
                         key={idx}
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.4, delay: 0.3 + idx * 0.04 }}
-                        className="group flex items-start gap-3 p-4 bg-[#0B0D10]/50 rounded-xl border border-[#242A32]/50 hover:border-[#FF6B35]/20 hover:bg-[#FF6B35]/3 transition-all"
+                        transition={{
+                          duration: 0.4,
+                          delay: 0.3 + idx * 0.04,
+                        }}
+                        className="group flex items-start gap-3 p-4 bg-[#0B0D10]/50 rounded-xl border border-[#242A32]/50 hover:border-[#FF6B35]/20 hover:bg-[#FF6B35]/[0.03] transition-all"
                       >
                         <div className="w-6 h-6 rounded-lg bg-[#FF6B35]/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#FF6B35]/20 transition-colors">
                           <FaCheckCircle className="text-[#FF6B35] text-[9px]" />
@@ -648,16 +677,18 @@ const ProjectDetail = () => {
                     View Source Code
                   </a>
                 )}
-                <button
-                  onClick={() => {
-                    setActiveScreenshot(0)
-                    setLightboxOpen(true)
-                  }}
-                  className="px-8 py-3.5 border border-[#242A32] rounded-xl text-[#9AA4B2] hover:text-[#FF6B35] hover:border-[#FF6B35]/30 transition-all inline-flex items-center gap-2"
-                >
-                  <FaEye />
-                  Screenshots
-                </button>
+                {screenshots.length > 0 && (
+                  <button
+                    onClick={() => {
+                      setActiveScreenshot(0)
+                      setLightboxOpen(true)
+                    }}
+                    className="px-8 py-3.5 border border-[#242A32] rounded-xl text-[#9AA4B2] hover:text-[#FF6B35] hover:border-[#FF6B35]/30 transition-all inline-flex items-center gap-2"
+                  >
+                    <FaEye />
+                    Screenshots
+                  </button>
+                )}
               </motion.div>
             </div>
 
@@ -721,17 +752,35 @@ const ProjectDetail = () => {
                     ...(project.type
                       ? [{ label: 'Type', value: project.type }]
                       : []),
-                    { label: 'Project ID', value: `#${String(project.id).padStart(2, '0')}` },
-                    { label: 'Technologies', value: `${project.tech.length} used` },
+                    {
+                      label: 'Project ID',
+                      value: `#${String(project.id).padStart(2, '0')}`,
+                    },
+                    {
+                      label: 'Technologies',
+                      value: `${project.tech.length} used`,
+                    },
                     ...(project.features
-                      ? [{ label: 'Features', value: `${project.features.length} listed` }]
+                      ? [
+                          {
+                            label: 'Features',
+                            value: `${project.features.length} listed`,
+                          },
+                        ]
                       : []),
                     ...(screenshots.length > 0
-                      ? [{ label: 'Screenshots', value: `${screenshots.length} available` }]
+                      ? [
+                          {
+                            label: 'Screenshots',
+                            value: `${screenshots.length} available`,
+                          },
+                        ]
                       : []),
                   ].map((item, i) => (
                     <div key={i}>
-                      {i > 0 && <div className="h-px bg-[#242A32]/50 my-3" />}
+                      {i > 0 && (
+                        <div className="h-px bg-[#242A32]/50 my-3" />
+                      )}
                       <div className="flex items-center justify-between">
                         <span className="text-[10px] text-[#6B7280] font-['JetBrains_Mono'] uppercase tracking-wider">
                           {item.label}
@@ -789,7 +838,9 @@ const ProjectDetail = () => {
                     <FaShareAlt className="text-[#6B7280] group-hover:text-[#FF6B35] flex-shrink-0 transition-colors" />
                   )}
                   <span className="text-xs text-[#9AA4B2] font-['JetBrains_Mono'] truncate flex-1 text-left">
-                    {copied ? 'Link copied to clipboard!' : window.location.href}
+                    {copied
+                      ? 'Link copied to clipboard!'
+                      : window.location.href}
                   </span>
                   <FaCopy className="text-[#6B7280] group-hover:text-[#FF6B35] flex-shrink-0 transition-colors text-xs" />
                 </button>

@@ -35,9 +35,9 @@ export const projects: Project[] = [
     year: '2024',
     type: 'Web Application',
     screenshots: [
-      '/src/assets/projects/screenshots/1-1.png',
-      '/src/assets/projects/screenshots/1-2.png',
-      '/src/assets/projects/screenshots/1-3.png',
+      '/projects/screenshots/1-1.png',
+      '/projects/screenshots/1-2.png',
+      '/projects/screenshots/1-3.png',
     ],
     features: [
       'Order management system',
@@ -70,8 +70,8 @@ export const projects: Project[] = [
     year: '2024',
     type: 'Interactive Game',
     screenshots: [
-      '/src/assets/projects/screenshots/2-1.png',
-      '/src/assets/projects/screenshots/2-2.png',
+      '/projects/screenshots/2-1.png',
+      '/projects/screenshots/2-2.png',
     ],
     features: [
       'Clue discovery system',
@@ -91,16 +91,16 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: 'Inventory Tracker',
+    title: 'SmartBiz Business Suite',
     description:
       'A comprehensive inventory management system with real-time stock tracking and analytics.',
     longDescription:
       'Enterprise-grade inventory management built for SMBs that need real-time visibility into their stock levels across multiple locations. Features barcode scanning via mobile camera, automated purchase order generation when stock falls below threshold, and a powerful analytics dashboard with demand forecasting.',
-    tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Redis'],
+    tech: ['React', 'CSS3', 'Node.js', 'MongoDB', 'MVC', 'Render'],
     image: '📦',
     color: 'from-cyan-500/20 to-blue-500/20',
     category: 'Full-Stack',
-    status: 'building',
+    status: 'completed',
     year: '2024',
     type: 'Enterprise Tool',
     screenshots: [
@@ -166,17 +166,18 @@ export const projects: Project[] = [
       'Personal finance management platform with budgeting, expense tracking, and financial insights.',
     longDescription:
       'SmartBudget helps individuals take control of their finances with an intuitive budgeting system, automated expense categorization, and clear visual insights into spending habits. Users can set savings goals, track progress, and receive personalized tips for improving their financial health.',
-    tech: ['React', 'TypeScript', 'ASP.NET Core', 'PostgreSQL'],
+    tech: ['C#', 'Blazor', 'ASP.NET Core', 'Render', 'Chart.js'],
     image: '💰',
     color: 'from-yellow-500/20 to-amber-500/20',
     category: 'Full-Stack',
     status: 'completed',
-    year: '2023',
+    year: '2026',
     type: 'Web Application',
     screenshots: [
-      '/src/assets/projects/screenshots/5-1.png',
+       '/src/assets/projects/screenshots/5-1.png',
       '/src/assets/projects/screenshots/5-2.png',
     ],
+    
     features: [
       'Budget creation & tracking',
       'Expense categorization',
@@ -199,12 +200,12 @@ export const projects: Project[] = [
       'Complete platform for managing students, courses, results, and school administration.',
     longDescription:
       'A fully-featured school management system that digitizes the administrative workflows of educational institutions. From student enrollment and course assignment to grade tracking, transcript generation, and parent communication — everything lives in one centralized platform.',
-    tech: ['C#', 'ASP.NET Core', 'SQL Server', 'Entity Framework'],
+    tech: ['Nextjs', 'Typescript', 'Tailwind CSS', 'Vercel', 'Supabase', 'PostgreSQL'],
     image: '🎓',
     color: 'from-indigo-500/20 to-blue-500/20',
     category: 'Full-Stack',
     status: 'completed',
-    year: '2023',
+    year: '2026',
     type: 'Enterprise Portal',
     screenshots: [
       '/src/assets/projects/screenshots/6-1.png',
@@ -231,13 +232,13 @@ export const projects: Project[] = [
     description:
       'Digital marketplace connecting customers with artisans and handmade products.',
     longDescription:
-      'Handmaiden Craft is an artisan-first marketplace that gives Nigerian craftspeople a beautiful digital storefront. Artisans can showcase portfolios, list products with rich media, and manage orders — while customers enjoy a curated shopping experience with verified reviews and seamless checkout via Stripe.',
-    tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Stripe'],
+      'Handmaiden Craft is an artisan-first marketplace that gives Nigerian craftspeople a beautiful digital storefront. Artisans can showcase portfolios, list products with rich media, and manage orders — while customers enjoy a curated shopping experience with verified reviews and seamless checkout via Paystack.',
+    tech: ['Nextjs', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Paystack', 'Vercel'],
     image: '🎨',
     color: 'from-amber-500/20 to-orange-500/20',
     category: 'Full-Stack',
     status: 'completed',
-    year: '2023',
+    year: '2025',
     type: 'Marketplace',
     screenshots: [
       '/src/assets/projects/screenshots/7-1.png',
@@ -252,7 +253,7 @@ export const projects: Project[] = [
     ],
     challenges: [
       'Building a fair search ranking algorithm',
-      'Handling Stripe Connect for multi-vendor payouts',
+      'Handling Paystack Connect for multi-vendor payouts',
       'Optimizing image-heavy pages for slow connections',
     ],
     liveUrl: 'https://handmaiden-craft.onrender.com/',

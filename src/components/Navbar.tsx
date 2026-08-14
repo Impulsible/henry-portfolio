@@ -16,6 +16,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
   const [activeHover, setActiveHover] = useState<string | null>(null)
   const location = useLocation()
+  const currentYear = new Date().getFullYear()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -153,7 +154,7 @@ const Navbar = () => {
             <div className="hidden md:flex items-center gap-3">
               {/* GitHub icon */}
               <a
-                href="https://github.com/IMPULSIBLE"
+                href="https://github.com/Impulsible"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-xl bg-[#151A20] border border-[#242A32] flex items-center justify-center text-[#9AA4B2] hover:text-[#FF6B35] hover:border-[#FF6B35]/50 transition-all duration-300 text-sm"
@@ -341,13 +342,15 @@ const Navbar = () => {
                       <span className="block font-['Space_Grotesk'] font-semibold text-[#F5F7FA]">
                         Download Resume
                       </span>
-                      <span className="block text-xs text-[#6B7280]">PDF · Updated 2024</span>
+                      <span className="block text-xs text-[#6B7280]">
+                        PDF · Updated {currentYear}
+                      </span>
                     </div>
                   </a>
 
                   {/* Email */}
                   <a
-                    href="mailto:hello@impulsible.com"
+                    href="mailto:henryosuagwu22@gmail.com"
                     onClick={() => setIsOpen(false)}
                     className="flex items-center gap-4 px-4 py-3.5 rounded-xl hover:bg-[#151A20] border border-transparent hover:border-[#242A32]/50 transition-all group"
                   >
@@ -358,7 +361,7 @@ const Navbar = () => {
                       <span className="block font-['Space_Grotesk'] font-semibold text-[#F5F7FA] group-hover:text-[#FF6B35] transition-colors">
                         Email Me
                       </span>
-                      <span className="block text-xs text-[#6B7280]">hello@impulsible.com</span>
+                      <span className="block text-xs text-[#6B7280]">henryosuagwu22@gmail.com</span>
                     </div>
                   </a>
                 </motion.div>
@@ -372,10 +375,10 @@ const Navbar = () => {
                 </p>
                 <motion.div variants={itemVariants} className="flex items-center gap-3 px-3">
                   {[
-                    { icon: <FaGithub />,   href: 'https://github.com/IMPULSIBLE', label: 'GitHub' },
+                    { icon: <FaGithub />,   href: 'https://github.com/Impulsible', label: 'GitHub' },
                     { icon: <FaLinkedin />, href: '#', label: 'LinkedIn' },
                     { icon: <FaTwitter />,  href: '#', label: 'Twitter' },
-                    { icon: <FaEnvelope />, href: 'mailto:hello@impulsible.com', label: 'Email' },
+                    { icon: <FaEnvelope />, href: 'mailto:henryosuagwu22@gmail.com', label: 'Email' },
                   ].map((social, i) => (
                     <a
                       key={i}
@@ -397,7 +400,7 @@ const Navbar = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="font-['JetBrains_Mono'] text-[10px] text-[#6B7280] tracking-wider">
-                      © 2024
+                      © {currentYear}
                     </p>
                     <p className="font-['Space_Grotesk'] text-xs font-bold text-[#FF6B35]">
                       🚀 IMPULSIBLE

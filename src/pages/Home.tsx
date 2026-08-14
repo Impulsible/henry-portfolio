@@ -13,7 +13,6 @@ import {
   FaCloud,
   FaShieldAlt,
   FaCheckCircle,
-  FaExternalLinkAlt,
   FaDownload,
   FaMapMarkerAlt,
   FaClock,
@@ -39,8 +38,13 @@ import {
   SiGit,
   SiFigma,
   SiPython,
-  SiDotnet
+  SiDotnet,
+  SiSupabase,
+  SiRender,
+  SiSharp
 } from 'react-icons/si'
+import { projects } from '../data/projects'
+import BentoProjectCard from '../components/BentoProjectCard'
 
 // ===== ANIMATED COUNTER =====
 const AnimatedCounter = ({ 
@@ -169,7 +173,16 @@ const Home = () => {
     { icon: <SiFirebase />, name: 'Firebase', color: '#FFCA28' },
     { icon: <SiPython />, name: 'Python', color: '#3776AB' },
     { icon: <SiDotnet />, name: '.NET', color: '#512BD4' },
+    { icon: <SiSupabase />, name: 'Supabase', color: '#3ECF8E' },
+    { icon: <SiRender />, name: 'Render', color: '#46E3B7' },
+    { icon: <SiSharp />, name: 'C#', color: '#239120' },
   ]
+
+  // Featured projects — IDs: 6 (School Portal), 7 (Handmaiden), 3 (Inventory), 5 (SmartBudget)
+  const featuredIds = [6, 7, 3, 5]
+  const featuredProjects = featuredIds
+    .map((id) => projects.find((p) => p.id === id))
+    .filter(Boolean) as typeof projects
 
   return (
     <>
@@ -429,7 +442,7 @@ const Home = () => {
                       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#FF6B35] to-[#FFB86B] p-[3px] rotate-3 hover:rotate-0 transition-transform duration-500">
                         <div className="w-full h-full rounded-2xl bg-[#0B0D10] flex items-center justify-center overflow-hidden">
                           <img
-                            src="/src/assets/profile.jpg"
+                            src="/src/assets/profile.jpeg"
                             alt="Henry Osuagwu"
                             className="w-full h-full object-cover rounded-2xl"
                             onError={(e) => {
@@ -734,7 +747,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== FEATURED PROJECTS ===== */}
+      {/* ===== FEATURED PROJECTS — 2×2 GRID ===== */}
       <section className="py-24 md:py-32 bg-[#0B0D10] relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(255,107,53,0.05)_0%,_transparent_60%)] pointer-events-none" />
 
@@ -777,120 +790,31 @@ const Home = () => {
             </Link>
           </motion.div>
 
-          {/* Project grid */}
-          <div className="grid lg:grid-cols-2 gap-8">
-            {[
-              {
-                id: 1,
-                title: 'Naija Snacks / Logistics',
-                icon: '🍲',
-                desc: 'A comprehensive food delivery and logistics platform built specifically for the Nigerian market. Features real-time order tracking, multiple payment gateways including Paystack, and an optimised delivery routing system.',
-                tech: ['React', 'Node.js', 'MongoDB', 'Paystack', 'Socket.io'],
-                link: '/projects/1',
-                flag: '🇳🇬',
-                status: 'In Progress',
-                color: 'from-orange-500/20 to-red-500/20',
-              },
-              {
-                id: 2,
-                title: 'Detective Investigation Game',
-                icon: '🕵️',
-                desc: 'An immersive interactive mystery investigation system where players solve complex cases using evidence analysis, witness interviews, and logical deduction. Built with a rich narrative engine.',
-                tech: ['React', 'ASP.NET', 'SQL Server', 'SignalR'],
-                link: '/projects/2',
-                status: 'In Progress',
-                color: 'from-purple-500/20 to-blue-500/20',
-              },
-              {
-                id: 3,
-                title: 'SmartBiz Business Suite',
-                icon: '📦',
-                desc: 'Enterprise-grade real-time inventory management system with barcode scanning, automated reorder alerts, multi-warehouse support, and a comprehensive analytics dashboard.',
-                tech: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Chart.js'],
-                link: '/projects/3',
-                status: 'Completed',
-                color: 'from-green-500/20 to-teal-500/20',
-              },
-              {
-                id: 4,
-                title: 'SmartBudget Finance',
-                icon: '💰',
-                desc: 'Personal finance management platform with intelligent spending analysis, budget tracking, savings goals, and financial insights powered by AI-driven recommendations.',
-                tech: ['React', 'Python', 'FastAPI', 'MongoDB'],
-                link: '/projects/4',
-                status: 'Completed',
-                color: 'from-yellow-500/20 to-orange-500/20',
-              },
-            ].map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                viewport={{ once: true }}
-              >
-                <Link
-                  to={project.link}
-                  className="group block bg-[#151A20] rounded-2xl border border-[#242A32] hover:border-[#FF6B35]/50 transition-all duration-500 overflow-hidden hover:shadow-[0_0_60px_rgba(255,107,53,0.1)]"
-                >
-                  {/* Project header */}
-                  <div className={`h-48 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
-                    <div
-                      className="absolute inset-0"
-                      style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`,
-                      }}
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-8xl group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl">
-                        {project.icon}
-                      </span>
-                    </div>
-                    <div className="absolute top-4 right-4">
-                      <span
-                        className={`px-3 py-1 rounded-full text-xs font-medium ${
-                          project.status === 'Completed'
-                            ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                            : 'bg-[#FF6B35]/20 text-[#FF6B35] border border-[#FF6B35]/30'
-                        }`}
-                      >
-                        {project.status}
-                      </span>
-                    </div>
-                    {'flag' in project && (
-                      <div className="absolute top-4 left-4 text-2xl">{project.flag}</div>
-                    )}
-                  </div>
-
-                  {/* Project body */}
-                  <div className="p-7">
-                    <h3 className="font-['Space_Grotesk'] text-xl font-bold text-[#F5F7FA] group-hover:text-[#FF6B35] transition-colors duration-300">
-                      {project.title}
-                    </h3>
-                    <p className="text-[#9AA4B2] text-sm mt-3 leading-relaxed line-clamp-3">
-                      {project.desc}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mt-5">
-                      {project.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 bg-[#0B0D10] border border-[#242A32] rounded-lg text-xs text-[#9AA4B2] font-['JetBrains_Mono']"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="mt-6 pt-5 border-t border-[#242A32]/50 flex items-center justify-between">
-                      <span className="text-[#FF6B35] text-sm font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
-                        View Case Study <FaArrowRight className="text-xs" />
-                      </span>
-                      <FaExternalLinkAlt className="text-[#3A4150] text-xs group-hover:text-[#FF6B35] transition-colors" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
+          {/* ── 2×2 PROJECT GRID ── */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {featuredProjects.map((project, i) => (
+              <BentoProjectCard key={project.id} project={project} index={i} />
             ))}
           </div>
+
+          {/* "More projects" teaser */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-12 flex items-center justify-center gap-4"
+          >
+            <div className="h-px flex-1 max-w-xs bg-gradient-to-r from-transparent to-[#242A32]" />
+            <Link
+              to="/projects"
+              className="flex items-center gap-2 text-sm text-[#6B7280] hover:text-[#FF6B35] transition-colors font-['JetBrains_Mono'] group"
+            >
+              <span>+{Math.max(0, projects.length - featuredIds.length)} more projects</span>
+              <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <div className="h-px flex-1 max-w-xs bg-gradient-to-l from-transparent to-[#242A32]" />
+          </motion.div>
         </div>
       </section>
 
@@ -999,24 +923,24 @@ const Home = () => {
 
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
             {[
-              { icon: <SiReact className="text-[#61DAFB]" />,       name: 'React',      category: 'Frontend'  },
-              { icon: <SiNextdotjs className="text-white" />,        name: 'Next.js',    category: 'Frontend'  },
-              { icon: <SiTypescript className="text-[#3178C6]" />,   name: 'TypeScript', category: 'Language'  },
-              { icon: <SiNodedotjs className="text-[#339933]" />,    name: 'Node.js',    category: 'Backend'   },
-              { icon: <SiPython className="text-[#3776AB]" />,       name: 'Python',     category: 'Language'  },
-              { icon: <SiDotnet className="text-[#512BD4]" />,       name: '.NET',       category: 'Backend'   },
-              { icon: <SiMongodb className="text-[#47A248]" />,      name: 'MongoDB',    category: 'Database'  },
-              { icon: <SiPostgresql className="text-[#4169E1]" />,   name: 'PostgreSQL', category: 'Database'  },
-              { icon: <SiTailwindcss className="text-[#06B6D4]" />,  name: 'Tailwind',   category: 'Styling'   },
-              { icon: <SiDocker className="text-[#2496ED]" />,       name: 'Docker',     category: 'DevOps'    },
-              { icon: <FaAws className="text-[#FF9900]" />,          name: 'AWS',        category: 'Cloud'     },
-              { icon: <SiFirebase className="text-[#FFCA28]" />,     name: 'Firebase',   category: 'Cloud'     },
-              { icon: <SiGit className="text-[#F05032]" />,          name: 'Git',        category: 'Tools'     },
-              { icon: <SiFigma className="text-[#F24E1E]" />,        name: 'Figma',      category: 'Design'    },
-              { icon: <FaDatabase className="text-[#FF6B35]" />,     name: 'Redis',      category: 'Cache'     },
-              { icon: <FaServer className="text-[#9AA4B2]" />,       name: 'Linux',      category: 'Server'    },
-              { icon: <FaCode className="text-[#61DAFB]" />,         name: 'GraphQL',    category: 'API'       },
-              { icon: <FaShieldAlt className="text-[#4FC08D]" />,    name: 'JWT/Auth',   category: 'Security'  },
+              { icon: <SiReact className="text-[#61DAFB]" />,       name: 'React',       category: 'Frontend'  },
+              { icon: <SiNextdotjs className="text-white" />,        name: 'Next.js',     category: 'Frontend'  },
+              { icon: <SiTypescript className="text-[#3178C6]" />,   name: 'TypeScript',  category: 'Language'  },
+              { icon: <SiNodedotjs className="text-[#339933]" />,    name: 'Node.js',     category: 'Backend'   },
+              { icon: <SiPython className="text-[#3776AB]" />,       name: 'Python',      category: 'Language'  },
+              { icon: <SiDotnet className="text-[#512BD4]" />,       name: '.NET',        category: 'Backend'   },
+              { icon: <SiSharp className="text-[#239120]" />,        name: 'C#',          category: 'Language'  },
+              { icon: <SiSupabase className="text-[#3ECF8E]" />,     name: 'Supabase',    category: 'Backend'   },
+              { icon: <SiRender className="text-[#46E3B7]" />,       name: 'Render',      category: 'DevOps'    },
+              { icon: <SiMongodb className="text-[#47A248]" />,      name: 'MongoDB',     category: 'Database'  },
+              { icon: <SiPostgresql className="text-[#4169E1]" />,   name: 'PostgreSQL',  category: 'Database'  },
+              { icon: <SiTailwindcss className="text-[#06B6D4]" />,  name: 'Tailwind',    category: 'Styling'   },
+              { icon: <SiDocker className="text-[#2496ED]" />,       name: 'Docker',      category: 'DevOps'    },
+              { icon: <FaAws className="text-[#FF9900]" />,          name: 'AWS',         category: 'Cloud'     },
+              { icon: <SiFirebase className="text-[#FFCA28]" />,     name: 'Firebase',    category: 'Cloud'     },
+              { icon: <SiGit className="text-[#F05032]" />,          name: 'Git',         category: 'Tools'     },
+              { icon: <SiFigma className="text-[#F24E1E]" />,        name: 'Figma',       category: 'Design'    },
+              { icon: <FaShieldAlt className="text-[#4FC08D]" />,    name: 'JWT/Auth',    category: 'Security'  },
             ].map((tech, index) => (
               <motion.div
                 key={index}
@@ -1225,7 +1149,7 @@ const Home = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-[#FFB86B] to-[#FF6B35] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
               <a
-                href="mailto:hello@impulsible.com"
+                href="mailto:henryosuagwu22@gmail.com"
                 className="px-10 py-4 border-2 border-[#242A32] rounded-xl hover:border-[#FF6B35] text-[#F5F7FA] hover:text-[#FF6B35] transition-all duration-300 inline-flex items-center gap-3 text-lg hover:bg-[#FF6B35]/5"
               >
                 <FaEnvelope />
