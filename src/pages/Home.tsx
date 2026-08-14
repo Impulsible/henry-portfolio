@@ -501,7 +501,7 @@ const Home = () => {
                         Core Stack
                       </p>
                       <div className="flex flex-wrap gap-1.5">
-                        {['React', 'Node.js', 'TypeScript', 'Python', '.NET', 'MongoDB'].map((tech) => (
+                        {['React/Next.js', 'C#', 'TypeScript', 'Tailwind CSS', 'ASP.NET', 'Vercel'].map((tech) => (
                           <span
                             key={tech}
                             className="px-2.5 py-1 bg-[#0B0D10] border border-[#242A32] rounded-lg text-[11px] text-[#9AA4B2] hover:border-[#FF6B35]/40 hover:text-[#FF6B35] transition-all cursor-default"
