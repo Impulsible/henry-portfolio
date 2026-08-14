@@ -1181,42 +1181,62 @@ const Home = () => {
       </section>
 
       {/* ===== QUICK NAVIGATION ===== */}
-      <section className="py-12 bg-[#0A0C0F] border-t border-[#1A1F27]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4"
-          >
-            {[
-              { to: '/projects', icon: <FaCode className="text-xl text-[#FF6B35]" />,       label: 'Projects', desc: 'View my portfolio'   },
-              { to: '/about',    icon: <FaLaptopCode className="text-xl text-[#FF6B35]" />, label: 'About',    desc: 'My journey & story'  },
-              { to: '/skills',   icon: <FaBolt className="text-xl text-[#FF6B35]" />,       label: 'Skills',   desc: 'Technologies I use'  },
-              { to: '/contact',  icon: <FaEnvelope className="text-xl text-[#FF6B35]" />,   label: 'Contact',  desc: 'Get in touch'        },
-            ].map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className="group bg-[#0B0D10] p-6 rounded-2xl border border-[#1A1F27] hover:border-[#FF6B35]/40 transition-all duration-300 hover:-translate-y-1 flex items-center gap-4"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[#FF6B35]/10 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
-                  {item.icon}
-                </div>
-                <div>
-                  <h3 className="font-['Space_Grotesk'] font-bold text-[#F5F7FA] group-hover:text-[#FF6B35] transition-colors">
-                    {item.label}
-                  </h3>
-                  <p className="text-xs text-[#6B7280]">{item.desc}</p>
-                </div>
-              </Link>
-            ))}
-          </motion.div>
+<section className="py-10 sm:py-12 md:py-14 bg-[#0A0C0F] border-t border-[#1A1F27]">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Optional label — helps orient users on mobile */}
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="text-center mb-6 sm:mb-8"
+    >
+      <span className="font-['JetBrains_Mono'] text-[10px] sm:text-xs text-[#6B7280] tracking-[0.2em] uppercase">
+        Quick Navigation
+      </span>
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
+    >
+      {[
+        { to: '/projects', icon: <FaCode className="text-lg sm:text-xl text-[#FF6B35]" />,       label: 'Projects', desc: 'View my portfolio'   },
+        { to: '/about',    icon: <FaLaptopCode className="text-lg sm:text-xl text-[#FF6B35]" />, label: 'About',    desc: 'My journey & story'  },
+        { to: '/skills',   icon: <FaBolt className="text-lg sm:text-xl text-[#FF6B35]" />,       label: 'Skills',   desc: 'Technologies I use'  },
+        { to: '/contact',  icon: <FaEnvelope className="text-lg sm:text-xl text-[#FF6B35]" />,   label: 'Contact',  desc: 'Get in touch'        },
+      ].map((item) => (
+        <Link
+          key={item.to}
+          to={item.to}
+          className="group bg-[#0B0D10] p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-[#1A1F27] hover:border-[#FF6B35]/40 transition-all duration-300 hover:-translate-y-1 active:scale-[0.98] flex items-center gap-3 sm:gap-4 min-w-0"
+        >
+          {/* Icon */}
+          <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-[#FF6B35]/10 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+            {item.icon}
+          </div>
+
+          {/* Text */}
+          <div className="min-w-0 flex-1">
+            <h3 className="font-['Space_Grotesk'] font-bold text-sm sm:text-base text-[#F5F7FA] group-hover:text-[#FF6B35] transition-colors truncate">
+              {item.label}
+            </h3>
+            <p className="text-[11px] sm:text-xs text-[#6B7280] truncate">
+              {item.desc}
+            </p>
+          </div>
+
+          {/* Chevron indicator (subtle affordance) */}
+          <FaArrowRight className="text-[10px] sm:text-xs text-[#3A4150] group-hover:text-[#FF6B35] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+        </Link>
+      ))}
+      </motion.div>
         </div>
       </section>
     </>
   )
 }
-
 export default Home
