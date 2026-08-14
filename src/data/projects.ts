@@ -104,8 +104,8 @@ export const projects: Project[] = [
     year: '2024',
     type: 'Enterprise Tool',
     screenshots: [
-      '/src/assets/projects/screenshots/3-1.png',
-      '/src/assets/projects/screenshots/3-2.png',
+      '/projects/screenshots/3-1.png',
+      '/projects/screenshots/3-2.png',
     ],
     features: [
       'Real-time inventory tracking',
@@ -140,8 +140,8 @@ export const projects: Project[] = [
     year: '2024',
     type: 'SaaS Platform',
     screenshots: [
-      '/src/assets/projects/screenshots/4-1.png',
-      '/src/assets/projects/screenshots/4-2.png',
+      '/projects/screenshots/4-1.png',
+      '/projects/screenshots/4-2.png',
     ],
     features: [
       'Real-time messaging with threads',
@@ -174,8 +174,8 @@ export const projects: Project[] = [
     year: '2026',
     type: 'Web Application',
     screenshots: [
-       '/src/assets/projects/screenshots/5-1.png',
-      '/src/assets/projects/screenshots/5-2.png',
+       '/projects/screenshots/5-1.png',
+      '/projects/screenshots/5-2.png',
     ],
     
     features: [
@@ -208,8 +208,8 @@ export const projects: Project[] = [
     year: '2026',
     type: 'Enterprise Portal',
     screenshots: [
-      '/src/assets/projects/screenshots/6-1.png',
-      '/src/assets/projects/screenshots/6-2.png',
+      '/projects/screenshots/6-1.png',
+      '/projects/screenshots/6-2.png',
     ],
     features: [
       'Student enrollment system',
@@ -241,8 +241,8 @@ export const projects: Project[] = [
     year: '2025',
     type: 'Marketplace',
     screenshots: [
-      '/src/assets/projects/screenshots/7-1.png',
-      '/src/assets/projects/screenshots/7-2.png',
+      '/projects/screenshots/7-1.png',
+      '/projects/screenshots/7-2.png',
     ],
     features: [
       'Product listings and search',
