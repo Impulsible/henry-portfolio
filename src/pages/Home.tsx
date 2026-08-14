@@ -382,10 +382,10 @@ const Home = () => {
                 </span>
                 <div className="w-8 h-px bg-[#242A32]" />
                 {[
-                  { icon: <FaGithub />, href: 'https://github.com/IMPULSIBLE', label: 'GitHub' },
-                  { icon: <FaLinkedin />, href: '#', label: 'LinkedIn' },
-                  { icon: <FaTwitter />, href: '#', label: 'Twitter' },
-                  { icon: <FaEnvelope />, href: 'mailto:hello@impulsible.com', label: 'Email' },
+                  { icon: <FaGithub />, href: 'https://github.com/Impulsible', label: 'GitHub' },
+                  { icon: <FaLinkedin />, href: 'https://linkedin.com/in/impulsible', label: 'LinkedIn' },
+                  { icon: <FaTwitter />, href: 'https://twitter.com/impulsible', label: 'Twitter' },
+                  { icon: <FaEnvelope />, href: 'mailto:henryosuagwu22@gmail.com', label: 'Email' },
                 ].map((social, i) => (
                   <motion.a
                     key={i}
@@ -442,7 +442,7 @@ const Home = () => {
                       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#FF6B35] to-[#FFB86B] p-[3px] rotate-3 hover:rotate-0 transition-transform duration-500">
                         <div className="w-full h-full rounded-2xl bg-[#0B0D10] flex items-center justify-center overflow-hidden">
                           <img
-                            src="/src/assets/profile.jpeg"
+                            src="/profile.jpg"
                             alt="Henry Osuagwu"
                             className="w-full h-full object-cover rounded-2xl"
                             onError={(e) => {
@@ -515,10 +515,10 @@ const Home = () => {
                     {/* Social links */}
                     <div className="flex justify-center gap-3 mt-6 pt-5 border-t border-[#242A32]/50">
                       {[
-                        { icon: <FaGithub />, href: 'https://github.com/IMPULSIBLE' },
-                        { icon: <FaLinkedin />, href: '#' },
-                        { icon: <FaTwitter />, href: '#' },
-                        { icon: <FaEnvelope />, href: 'mailto:hello@impulsible.com' },
+                        { icon: <FaGithub />, href: 'https://github.com/Impulsible' },
+                        { icon: <FaLinkedin />, href: 'https://linkedin.com/in/impulsible' },
+                        { icon: <FaTwitter />, href: 'https://twitter.com/impulsible' },
+                        { icon: <FaEnvelope />, href: 'mailto:henryosuagwu22@gmail.com' },
                       ].map((social, i) => (
                         <a
                           key={i}
