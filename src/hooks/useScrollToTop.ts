@@ -6,9 +6,6 @@ export const useScrollToTop = () => {
 
   useEffect(() => {
     // Scroll to top instantly on route change
-    window.scrollTo({ top: 0, behavior: 'instant' })
-    
-    // Or smooth scroll:
-    // window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo(0, 0)
   }, [pathname])
 }
