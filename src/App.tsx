@@ -11,6 +11,7 @@ import Skills from './pages/Skills'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 
+
 function App() {
   const [loading, setLoading] = useState(true)
 
