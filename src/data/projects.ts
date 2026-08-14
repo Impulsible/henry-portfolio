@@ -200,7 +200,7 @@ export const projects: Project[] = [
       'Complete platform for managing students, courses, results, and school administration.',
     longDescription:
       'A fully-featured school management system that digitizes the administrative workflows of educational institutions. From student enrollment and course assignment to grade tracking, transcript generation, and parent communication — everything lives in one centralized platform.',
-    tech: ['Nextjs', 'Typescript', 'Tailwind CSS', 'Vercel', 'Supabase', 'PostgreSQL'],
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel', 'Supabase', 'PostgreSQL'],
     image: '🎓',
     color: 'from-indigo-500/20 to-blue-500/20',
     category: 'Full-Stack',
