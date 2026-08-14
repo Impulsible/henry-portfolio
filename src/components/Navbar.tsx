@@ -7,7 +7,6 @@ import {
   FaTwitter, 
   FaEnvelope, 
   FaDownload,
-  FaRocket,
   FaArrowRight
 } from 'react-icons/fa'
 
@@ -26,12 +25,10 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false)
   }, [location.pathname])
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
@@ -51,7 +48,6 @@ const Navbar = () => {
     { name: 'Contact',  path: '/contact',  icon: '📬', desc: 'Get in touch' },
   ]
 
-  // Stagger animation for mobile menu items
   const menuVariants = {
     closed: {
       opacity: 0,
@@ -90,11 +86,15 @@ const Navbar = () => {
               to="/"
               className="relative z-50 flex items-center gap-2 group"
             >
-              {/* Logo mark */}
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#FF6B35] to-[#FFB86B] flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(255,107,53,0.4)] transition-all duration-300 group-hover:scale-105">
-                <span className="font-['Space_Grotesk'] text-sm font-bold text-[#0B0D10]">
-                  HO
-                </span>
+              {/* Logo image */}
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#FF6B35] to-[#FFB86B] p-[2px] shadow-lg shadow-[#FF6B35]/20 group-hover:shadow-[0_0_30px_rgba(255,107,53,0.4)] transition-all duration-300 group-hover:scale-105">
+                <div className="w-full h-full rounded-xl bg-[#0B0D10] overflow-hidden flex items-center justify-center">
+                  <img 
+                    src="/logo.png" 
+                    alt="IMPULSIBLE" 
+                    className="w-7 h-7 object-contain"
+                  />
+                </div>
               </div>
               {/* Logo text */}
               <div className="hidden sm:block">
@@ -124,7 +124,6 @@ const Navbar = () => {
                     onMouseEnter={() => setActiveHover(item.name)}
                     onMouseLeave={() => setActiveHover(null)}
                   >
-                    {/* Active / hover background */}
                     {(isActive || activeHover === item.name) && (
                       <motion.div
                         layoutId="navbar-pill"
@@ -137,7 +136,6 @@ const Navbar = () => {
                       />
                     )}
                     <span className="relative z-10">{item.name}</span>
-                    {/* Active dot */}
                     {isActive && (
                       <motion.span
                         layoutId="active-dot"
@@ -152,7 +150,6 @@ const Navbar = () => {
 
             {/* ── Desktop Right Actions ── */}
             <div className="hidden md:flex items-center gap-3">
-              {/* GitHub icon */}
               <a
                 href="https://github.com/Impulsible"
                 target="_blank"
@@ -163,7 +160,6 @@ const Navbar = () => {
                 <FaGithub />
               </a>
 
-              {/* Resume button */}
               <a
                 href="#"
                 className="group px-5 py-2.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8F5E] text-[#0B0D10] font-semibold rounded-xl text-sm hover:shadow-[0_0_25px_rgba(255,107,53,0.3)] transition-all duration-300 hover:scale-[1.02] inline-flex items-center gap-2 relative overflow-hidden"
@@ -181,14 +177,12 @@ const Navbar = () => {
               aria-label="Toggle menu"
               aria-expanded={isOpen}
             >
-              {/* Button background */}
               <div className={`absolute inset-0 rounded-xl transition-all duration-300 ${
                 isOpen 
                   ? 'bg-[#FF6B35]/10 border border-[#FF6B35]/30' 
                   : 'bg-[#151A20]/50 border border-[#242A32]/50 group-hover:border-[#FF6B35]/30'
               }`} />
 
-              {/* Hamburger lines */}
               <div className="relative w-5 h-4 flex flex-col justify-between">
                 <span
                   className={`block h-[2px] rounded-full transition-all duration-300 origin-center ${
@@ -221,7 +215,6 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -231,7 +224,6 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             />
 
-            {/* Menu panel */}
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
@@ -242,8 +234,14 @@ const Navbar = () => {
               {/* Menu header */}
               <div className="px-6 pt-20 pb-6 border-b border-[#242A32]/30">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FF6B35] to-[#FFB86B] flex items-center justify-center">
-                    <FaRocket className="text-[#0B0D10] text-sm" />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FF6B35] to-[#FFB86B] p-[2px]">
+                    <div className="w-full h-full rounded-xl bg-[#0B0D10] overflow-hidden flex items-center justify-center">
+                      <img 
+                        src="/logo.png" 
+                        alt="IMPULSIBLE" 
+                        className="w-8 h-8 object-contain"
+                      />
+                    </div>
                   </div>
                   <div>
                     <p className="font-['Space_Grotesk'] font-bold text-[#F5F7FA]">
@@ -281,14 +279,12 @@ const Navbar = () => {
                               : 'hover:bg-[#151A20] border border-transparent hover:border-[#242A32]/50'
                           }`}
                         >
-                          {/* Icon */}
                           <span className={`text-xl transition-transform duration-300 group-hover:scale-110 ${
                             isActive ? 'scale-110' : ''
                           }`}>
                             {item.icon}
                           </span>
 
-                          {/* Text */}
                           <div className="flex-1">
                             <span className={`block font-['Space_Grotesk'] font-semibold transition-colors ${
                               isActive ? 'text-[#FF6B35]' : 'text-[#F5F7FA] group-hover:text-[#FF6B35]'
@@ -300,14 +296,12 @@ const Navbar = () => {
                             </span>
                           </div>
 
-                          {/* Arrow */}
                           <FaArrowRight className={`text-xs transition-all duration-300 ${
                             isActive 
                               ? 'text-[#FF6B35] opacity-100' 
                               : 'text-[#3A4150] opacity-0 group-hover:opacity-100 group-hover:translate-x-1'
                           }`} />
 
-                          {/* Active indicator */}
                           {isActive && (
                             <motion.div
                               layoutId="mobile-active"
@@ -329,7 +323,6 @@ const Navbar = () => {
                   Quick Actions
                 </p>
                 <motion.div variants={itemVariants} className="space-y-2">
-                  {/* Resume button */}
                   <a
                     href="#"
                     onClick={() => setIsOpen(false)}
@@ -348,7 +341,6 @@ const Navbar = () => {
                     </div>
                   </a>
 
-                  {/* Email */}
                   <a
                     href="mailto:henryosuagwu22@gmail.com"
                     onClick={() => setIsOpen(false)}
@@ -403,7 +395,7 @@ const Navbar = () => {
                       © {currentYear}
                     </p>
                     <p className="font-['Space_Grotesk'] text-xs font-bold text-[#FF6B35]">
-                      🚀 IMPULSIBLE
+                      IMPULSIBLE
                     </p>
                   </div>
                   <div className="flex items-center gap-1.5">

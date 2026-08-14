@@ -303,7 +303,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9, duration: 0.6 }}
-                className="text-lg md:text-xl text-[#9AA4B2] mt-6 max-w-2xl leading-relaxed"
+                className="text-lg md:text-xl text-[#9AA4B2] mt-6 max-w-2xl leading-relaxed text-justify"
               >
                 I craft{' '}
                 <span className="text-[#F5F7FA] font-medium">
@@ -317,7 +317,7 @@ const Home = () => {
                 that make an impact in the Nigerian tech ecosystem and beyond.
               </motion.p>
 
-              {/* Location & timezone */}
+              {/* Location & timezone — Updated with logo image */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -333,7 +333,12 @@ const Home = () => {
                 </span>
                 <span className="w-1 h-1 bg-[#242A32] rounded-full" />
                 <span className="flex items-center gap-2 text-sm text-[#FF6B35] font-['JetBrains_Mono']">
-                  <FaRocket /> IMPULSIBLE
+                  <img 
+                    src="/logo.png" 
+                    alt="IMPULSIBLE" 
+                    className="w-4 h-4 object-contain"
+                  />
+                  IMPULSIBLE
                 </span>
               </motion.div>
 
@@ -675,13 +680,13 @@ const Home = () => {
                   {' '}digital reality
                 </span>
               </h2>
-              <p className="text-[#9AA4B2] text-lg mt-6 leading-relaxed">
+              <p className="text-[#9AA4B2] text-lg mt-6 leading-relaxed text-justify">
                 I'm a passionate full-stack developer based in Lagos, Nigeria, with over 4 years of
                 experience building web applications that matter. From e-commerce platforms to
                 AI-powered tools, I love tackling complex problems and turning them into elegant
                 solutions.
               </p>
-              <p className="text-[#9AA4B2] text-lg mt-4 leading-relaxed">
+              <p className="text-[#9AA4B2] text-lg mt-4 leading-relaxed text-justify">
                 Under my brand{' '}
                 <span className="text-[#FF6B35] font-semibold">IMPULSIBLE</span>, I'm focused on
                 creating innovative tech solutions tailored for the African market while maintaining
@@ -777,7 +782,7 @@ const Home = () => {
                   proud of
                 </span>
               </h2>
-              <p className="text-[#9AA4B2] text-lg max-w-xl mt-4 leading-relaxed">
+              <p className="text-[#9AA4B2] text-lg max-w-xl mt-4 leading-relaxed text-justify">
                 Each project represents a unique challenge solved with creativity, clean code, and
                 modern technologies.
               </p>
@@ -839,7 +844,7 @@ const Home = () => {
                 {' '}the table
               </span>
             </h2>
-            <p className="text-[#9AA4B2] text-lg max-w-2xl mx-auto mt-4">
+            <p className="text-[#9AA4B2] text-lg max-w-2xl mx-auto mt-4 text-justify">
               End-to-end development services that take your ideas from concept to deployment.
             </p>
           </motion.div>
@@ -885,7 +890,9 @@ const Home = () => {
                 <h3 className="font-['Space_Grotesk'] text-lg font-bold text-[#F5F7FA] mb-3">
                   {service.title}
                 </h3>
-                <p className="text-[#9AA4B2] text-sm leading-relaxed mb-5">{service.desc}</p>
+                <p className="text-[#9AA4B2] text-sm leading-relaxed mb-5 text-justify">
+                  {service.desc}
+                </p>
                 <ul className="space-y-2">
                   {service.features.map((feature, fi) => (
                     <li key={fi} className="flex items-center gap-2 text-xs text-[#6B7280]">
@@ -993,7 +1000,7 @@ const Home = () => {
                 {' '}work
               </span>
             </h2>
-            <p className="text-[#9AA4B2] text-lg max-w-2xl mx-auto mt-4">
+            <p className="text-[#9AA4B2] text-lg max-w-2xl mx-auto mt-4 text-justify">
               A streamlined development process that ensures quality, transparency, and timely
               delivery.
             </p>
@@ -1046,14 +1053,16 @@ const Home = () => {
                 <h3 className="font-['Space_Grotesk'] text-xl font-bold text-[#F5F7FA] mb-3">
                   {process.title}
                 </h3>
-                <p className="text-[#9AA4B2] text-sm leading-relaxed">{process.desc}</p>
+                <p className="text-[#9AA4B2] text-sm leading-relaxed text-justify">
+                  {process.desc}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== IMPULSIBLE BRAND ===== */}
+      {/* ===== IMPULSIBLE BRAND — Updated with logo image ===== */}
       <section className="py-24 md:py-32 bg-[#0B0D10] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#FF6B35]/5 rounded-full blur-3xl" />
@@ -1066,15 +1075,21 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {/* Brand icon */}
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-br from-[#FF6B35] to-[#FFB86B] mb-8 shadow-[0_0_60px_rgba(255,107,53,0.3)]">
-              <FaRocket className="text-3xl text-[#0B0D10]" />
+            {/* Brand icon — Logo image instead of rocket */}
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-br from-[#FF6B35] to-[#FFB86B] mb-8 shadow-[0_0_60px_rgba(255,107,53,0.3)] p-1">
+              <div className="w-full h-full rounded-2xl bg-[#0B0D10] overflow-hidden flex items-center justify-center">
+                <img 
+                  src="/logo.png" 
+                  alt="IMPULSIBLE" 
+                  className="w-14 h-14 object-contain"
+                />
+              </div>
             </div>
 
             <h2 className="font-['Space_Grotesk'] text-5xl md:text-7xl font-bold bg-gradient-to-r from-[#FF6B35] via-[#FF8F5E] to-[#FFB86B] bg-clip-text text-transparent">
               IMPULSIBLE
             </h2>
-            <p className="text-[#9AA4B2] text-xl max-w-2xl mx-auto mt-6 leading-relaxed">
+            <p className="text-[#9AA4B2] text-xl max-w-2xl mx-auto mt-6 leading-relaxed text-justify">
               More than a brand — it's a philosophy. Building innovative digital solutions from{' '}
               <span className="text-[#F5F7FA] font-medium">Nigeria</span> 🇳🇬 for the{' '}
               <span className="text-[#F5F7FA] font-medium">world</span> 🌍.
@@ -1100,7 +1115,7 @@ const Home = () => {
                   <h4 className="font-['Space_Grotesk'] font-bold text-[#F5F7FA] text-lg">
                     {value.label}
                   </h4>
-                  <p className="text-sm text-[#6B7280] mt-1">{value.desc}</p>
+                  <p className="text-sm text-[#6B7280] mt-1 text-justify">{value.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -1134,7 +1149,7 @@ const Home = () => {
                 in mind?
               </span>
             </h2>
-            <p className="text-[#9AA4B2] text-lg max-w-xl mx-auto mt-6 leading-relaxed">
+            <p className="text-[#9AA4B2] text-lg max-w-xl mx-auto mt-6 leading-relaxed text-justify">
               I'm always excited to discuss new projects, creative ideas, or opportunities to be part
               of your vision. Let's build something amazing together.
             </p>
@@ -1181,59 +1196,58 @@ const Home = () => {
       </section>
 
       {/* ===== QUICK NAVIGATION ===== */}
-<section className="py-10 sm:py-12 md:py-14 bg-[#0A0C0F] border-t border-[#1A1F27]">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    {/* Optional label — helps orient users on mobile */}
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
-      className="text-center mb-6 sm:mb-8"
-    >
-      <span className="font-['JetBrains_Mono'] text-[10px] sm:text-xs text-[#6B7280] tracking-[0.2em] uppercase">
-        Quick Navigation
-      </span>
-    </motion.div>
+      <section className="py-10 sm:py-12 md:py-14 bg-[#0A0C0F] border-t border-[#1A1F27]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mb-6 sm:mb-8"
+          >
+            <span className="font-['JetBrains_Mono'] text-[10px] sm:text-xs text-[#6B7280] tracking-[0.2em] uppercase">
+              Quick Navigation
+            </span>
+          </motion.div>
 
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
-    >
-      {[
-        { to: '/projects', icon: <FaCode className="text-lg sm:text-xl text-[#FF6B35]" />,       label: 'Projects', desc: 'View my portfolio'   },
-        { to: '/about',    icon: <FaLaptopCode className="text-lg sm:text-xl text-[#FF6B35]" />, label: 'About',    desc: 'My journey & story'  },
-        { to: '/skills',   icon: <FaBolt className="text-lg sm:text-xl text-[#FF6B35]" />,       label: 'Skills',   desc: 'Technologies I use'  },
-        { to: '/contact',  icon: <FaEnvelope className="text-lg sm:text-xl text-[#FF6B35]" />,   label: 'Contact',  desc: 'Get in touch'        },
-      ].map((item) => (
-        <Link
-          key={item.to}
-          to={item.to}
-          className="group bg-[#0B0D10] p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-[#1A1F27] hover:border-[#FF6B35]/40 transition-all duration-300 hover:-translate-y-1 active:scale-[0.98] flex items-center gap-3 sm:gap-4 min-w-0"
-        >
-          {/* Icon */}
-          <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-[#FF6B35]/10 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
-            {item.icon}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
+          >
+            {[
+              { to: '/projects', icon: <FaCode className="text-lg sm:text-xl text-[#FF6B35]" />,       label: 'Projects', desc: 'View my portfolio'   },
+              { to: '/about',    icon: <FaLaptopCode className="text-lg sm:text-xl text-[#FF6B35]" />, label: 'About',    desc: 'My journey & story'  },
+              { to: '/skills',   icon: <FaBolt className="text-lg sm:text-xl text-[#FF6B35]" />,       label: 'Skills',   desc: 'Technologies I use'  },
+              { to: '/contact',  icon: <FaEnvelope className="text-lg sm:text-xl text-[#FF6B35]" />,   label: 'Contact',  desc: 'Get in touch'        },
+            ].map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="group bg-[#0B0D10] p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-[#1A1F27] hover:border-[#FF6B35]/40 transition-all duration-300 hover:-translate-y-1 active:scale-[0.98] flex items-center gap-3 sm:gap-4 min-w-0"
+              >
+                {/* Icon */}
+                <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-[#FF6B35]/10 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                  {item.icon}
+                </div>
 
-          {/* Text */}
-          <div className="min-w-0 flex-1">
-            <h3 className="font-['Space_Grotesk'] font-bold text-sm sm:text-base text-[#F5F7FA] group-hover:text-[#FF6B35] transition-colors truncate">
-              {item.label}
-            </h3>
-            <p className="text-[11px] sm:text-xs text-[#6B7280] truncate">
-              {item.desc}
-            </p>
-          </div>
+                {/* Text */}
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-['Space_Grotesk'] font-bold text-sm sm:text-base text-[#F5F7FA] group-hover:text-[#FF6B35] transition-colors truncate">
+                    {item.label}
+                  </h3>
+                  <p className="text-[11px] sm:text-xs text-[#6B7280] truncate">
+                    {item.desc}
+                  </p>
+                </div>
 
-          {/* Chevron indicator (subtle affordance) */}
-          <FaArrowRight className="text-[10px] sm:text-xs text-[#3A4150] group-hover:text-[#FF6B35] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
-        </Link>
-      ))}
-      </motion.div>
+                {/* Chevron indicator */}
+                <FaArrowRight className="text-[10px] sm:text-xs text-[#3A4150] group-hover:text-[#FF6B35] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+              </Link>
+            ))}
+          </motion.div>
         </div>
       </section>
     </>

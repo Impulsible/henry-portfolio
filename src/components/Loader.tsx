@@ -1,14 +1,14 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import Logo from './Logo'
 
 const Loader = () => {
   const [loading, setLoading] = useState(true)
   const [progress, setProgress] = useState(0)
   const [statusText, setStatusText] = useState('Initializing')
-  const currentYear = new Date().getFullYear() // ← Dynamic year
+  const currentYear = new Date().getFullYear()
 
   useEffect(() => {
-    // Simulate realistic loading stages
     const stages = [
       { progress: 15, text: 'Loading assets', delay: 400 },
       { progress: 35, text: 'Compiling components', delay: 800 },
@@ -38,10 +38,6 @@ const Loader = () => {
     return () => timers.forEach(clearTimeout)
   }, [])
 
-  // Letters for stagger animation
-  const brandName = 'IMPULSIBLE'
-  const letters = brandName.split('')
-
   return (
     <AnimatePresence mode="wait">
       {loading && (
@@ -55,8 +51,7 @@ const Loader = () => {
           }}
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0B0D10] overflow-hidden"
         >
-          {/* ── Background effects ── */}
-          {/* Gradient mesh */}
+          {/* Background effects */}
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_rgba(255,107,53,0.08)_0%,_transparent_50%)]" />
             <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,_rgba(255,184,107,0.05)_0%,_transparent_50%)]" />
@@ -145,41 +140,24 @@ const Loader = () => {
               />
 
               {/* Logo container */}
-              <div className="relative w-20 h-20 rounded-2xl bg-[#0B0D10] flex items-center justify-center border border-[#242A32]/50">
-                <motion.span
-                  animate={{
-                    scale: [1, 1.1, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                  }}
-                  className="text-3xl"
-                >
-                  🚀
-                </motion.span>
+              <div className="relative w-20 h-20 rounded-2xl bg-[#0B0D10] flex items-center justify-center border border-[#242A32]/50 overflow-hidden">
+                <img 
+                  src="/logo.png" 
+                  alt="IMPULSIBLE" 
+                  className="w-16 h-16 object-contain"
+                />
               </div>
             </motion.div>
 
-            {/* Brand name with stagger */}
-            <div className="flex items-center gap-[2px]">
-              {letters.map((letter, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ y: 30, opacity: 0, rotateX: -90 }}
-                  animate={{ y: 0, opacity: 1, rotateX: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.3 + i * 0.06,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  className="font-['Space_Grotesk'] text-4xl md:text-5xl font-bold bg-gradient-to-b from-[#FF6B35] via-[#FF8F5E] to-[#FFB86B] bg-clip-text text-transparent inline-block"
-                >
-                  {letter}
-                </motion.span>
-              ))}
-            </div>
+            {/* Brand name */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="font-['Space_Grotesk'] text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#FF6B35] via-[#FF8F5E] to-[#FFB86B] bg-clip-text text-transparent"
+            >
+              IMPULSIBLE
+            </motion.h1>
 
             {/* Tagline */}
             <motion.div
@@ -202,11 +180,8 @@ const Loader = () => {
               transition={{ delay: 0.8, duration: 0.6 }}
               className="w-full space-y-3"
             >
-              {/* Progress bar container */}
               <div className="relative">
-                {/* Background track */}
                 <div className="w-full h-1.5 bg-[#151A20] rounded-full overflow-hidden border border-[#242A32]/30">
-                  {/* Animated fill */}
                   <motion.div
                     className="h-full rounded-full relative overflow-hidden"
                     initial={{ width: '0%' }}
@@ -217,7 +192,6 @@ const Loader = () => {
                         'linear-gradient(90deg, #FF6B35, #FF8F5E, #FFB86B)',
                     }}
                   >
-                    {/* Shimmer effect */}
                     <motion.div
                       className="absolute inset-0"
                       animate={{ x: ['-100%', '100%'] }}
@@ -234,7 +208,6 @@ const Loader = () => {
                   </motion.div>
                 </div>
 
-                {/* Glow under progress */}
                 <motion.div
                   className="absolute top-0 left-0 h-1.5 rounded-full blur-md opacity-50"
                   animate={{ width: `${progress}%` }}
@@ -246,9 +219,7 @@ const Loader = () => {
                 />
               </div>
 
-              {/* Progress info */}
               <div className="flex items-center justify-between">
-                {/* Status text with typing cursor */}
                 <div className="flex items-center gap-1.5">
                   <motion.span
                     animate={{ opacity: [1, 0, 1] }}
@@ -276,7 +247,6 @@ const Loader = () => {
                   </AnimatePresence>
                 </div>
 
-                {/* Percentage */}
                 <motion.span
                   key={progress}
                   initial={{ scale: 1.3, color: '#FF6B35' }}
@@ -296,7 +266,6 @@ const Loader = () => {
               transition={{ delay: 1.2, duration: 0.6 }}
               className="w-full bg-[#0A0C0F] rounded-xl border border-[#1A1F27] p-4 overflow-hidden"
             >
-              {/* Terminal header */}
               <div className="flex items-center gap-1.5 mb-3">
                 <div className="w-2 h-2 rounded-full bg-[#FF5F56]" />
                 <div className="w-2 h-2 rounded-full bg-[#FFBD2E]" />
@@ -306,34 +275,13 @@ const Loader = () => {
                 </span>
               </div>
 
-              {/* Log lines */}
               <div className="space-y-1.5 font-['JetBrains_Mono'] text-[10px] leading-relaxed">
                 {[
-                  {
-                    text: '→ Loading portfolio...',
-                    delay: 0.4,
-                    color: 'text-[#9AA4B2]',
-                  },
-                  {
-                    text: '✓ Assets compiled',
-                    delay: 0.8,
-                    color: 'text-green-400/70',
-                  },
-                  {
-                    text: '✓ Components mounted',
-                    delay: 1.2,
-                    color: 'text-green-400/70',
-                  },
-                  {
-                    text: '✓ Projects loaded (7)',
-                    delay: 1.6,
-                    color: 'text-green-400/70',
-                  },
-                  {
-                    text: '⚡ Ready to launch!',
-                    delay: 2.2,
-                    color: 'text-[#FF6B35]',
-                  },
+                  { text: '→ Loading portfolio...', delay: 0.4, color: 'text-[#9AA4B2]' },
+                  { text: '✓ Assets compiled', delay: 0.8, color: 'text-green-400/70' },
+                  { text: '✓ Components mounted', delay: 1.2, color: 'text-green-400/70' },
+                  { text: '✓ Projects loaded (7)', delay: 1.6, color: 'text-green-400/70' },
+                  { text: '⚡ Ready to launch!', delay: 2.2, color: 'text-[#FF6B35]' },
                 ].map((line, i) => (
                   <motion.div
                     key={i}

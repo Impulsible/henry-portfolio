@@ -13,7 +13,16 @@ const BrandSection = () => {
           className="text-center"
         >
           <div className="inline-flex items-center gap-3 mb-4">
-            <span className="text-4xl">🚀</span>
+            {/* Logo image */}
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF6B35] to-[#FFB86B] p-[2px] shadow-lg shadow-[#FF6B35]/20">
+              <div className="w-full h-full rounded-xl bg-[#0B0D10] overflow-hidden flex items-center justify-center">
+                <img 
+                  src="/logo.png" 
+                  alt="IMPULSIBLE" 
+                  className="w-10 h-10 object-contain"
+                />
+              </div>
+            </div>
             <h2 className="font-['Space_Grotesk'] text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#FF6B35] to-[#FFB86B] bg-clip-text text-transparent">
               IMPULSIBLE
             </h2>

@@ -32,6 +32,8 @@ import {
   FaLightbulb,
   FaShieldAlt,
   FaQuoteLeft,
+  FaAward,
+  FaUniversity,
 } from 'react-icons/fa'
 
 // Animated counter
@@ -83,74 +85,76 @@ const About = () => {
 
   const timeline = [
     {
-      year: '2024',
-      title: 'Full-Stack Developer',
-      subtitle: 'IMPULSIBLE — Freelance & Building',
+      year: '2024 — Present',
+      title: 'Full-Stack Developer & Founder',
+      subtitle: 'IMPULSIBLE — Building Innovative Solutions',
       description:
-        'Building innovative products like Naija Snacks logistics platform, AI collaboration tools, and detective investigation games. Focused on Nigerian market solutions.',
+        'Currently focused on building impactful digital products for the Nigerian market and beyond. Leading development of Naija Snacks logistics platform, AI-powered collaboration tools, and interactive detective investigation games. Driving the vision of IMPULSIBLE as a brand that creates purpose-driven technology solutions.',
       icon: <FaRocket />,
       color: 'from-[#FF6B35] to-[#FFB86B]',
-      tags: ['React', 'Node.js', 'TypeScript', 'MongoDB'],
+      tags: ['React', 'Node.js', 'TypeScript', 'MongoDB', 'AI/ML'],
     },
     {
-      year: '2023',
-      title: 'Advanced Full-Stack Projects',
-      subtitle: 'Building Production-Ready Apps',
+      year: '2024 — 2026',
+      title: 'B.Sc. Software Development',
+      subtitle: 'Brigham Young University — Idaho (Completed)',
       description:
-        'Delivered SmartBudget finance platform, School Management Portal, and Handmaiden Craft marketplace. Mastered ASP.NET Core, PostgreSQL, and cloud deployment.',
-      icon: <FaCode />,
+        'Earned a Bachelor of Science in Software Development from BYU-Idaho (2024—2026), with a strong emphasis on Web Development. This comprehensive program deepened my understanding of software engineering principles, agile methodologies, modern web technologies, and full-stack development practices. Graduated with a strong foundation in building scalable, maintainable web applications and software systems.',
+      icon: <FaGraduationCap />,
       color: 'from-blue-500 to-cyan-500',
-      tags: ['ASP.NET Core', 'PostgreSQL', 'C#', 'Entity Framework'],
+      tags: ['Software Engineering', 'Web Development', 'Agile', 'Systems Design'],
     },
     {
-      year: '2022',
-      title: 'Web Development Deep Dive',
-      subtitle: 'Expanding Technical Skills',
+      year: '2017 — 2022',
+      title: 'B.Tech. Statistics',
+      subtitle: 'Federal University of Technology, Owerri (Completed)',
       description:
-        'Deepened React expertise, learned TypeScript, and started building full-stack applications. Explored database design and API development.',
-      icon: <FaLaptopCode />,
+        'Completed a Bachelor of Technology in Statistics from FUTO (2017—2022). This rigorous program provided a strong mathematical and analytical foundation — teaching data analysis, statistical modeling, and critical thinking skills that directly inform my approach to software development and problem-solving.',
+      icon: <FaUniversity />,
       color: 'from-purple-500 to-pink-500',
-      tags: ['React', 'TypeScript', 'REST APIs', 'SQL'],
+      tags: ['Statistics', 'Data Analysis', 'Mathematics', 'Research'],
     },
     {
-      year: '2021',
-      title: 'Coding Journey Begins',
-      subtitle: 'Foundations & First Projects',
+      year: '2019 — 2020',
+      title: 'Self-Taught Programming',
+      subtitle: 'Independent Learning Journey',
       description:
-        'Started learning web development with HTML, CSS, and JavaScript. Built first projects and discovered passion for creating digital solutions.',
+        'Began my self-taught programming journey during the gap year between degrees. Immersed myself in HTML, CSS, JavaScript, and Python. Built foundational projects and discovered my passion for creating digital solutions that solve real-world problems.',
       icon: <FaLightbulb />,
       color: 'from-green-500 to-emerald-500',
-      tags: ['HTML', 'CSS', 'JavaScript', 'Git'],
+      tags: ['HTML', 'CSS', 'JavaScript', 'Python'],
     },
   ]
 
   const education = [
     {
       degree: 'Bachelor of Science',
-      field: 'Computer Science',
-      school: 'University of Nigeria',
-      year: '2020 — 2024',
+      field: 'Software Development',
+      subfield: 'Web Development',
+      school: 'Brigham Young University — Idaho',
+      year: '2024 — 2026',
       status: 'Completed',
       icon: <FaGraduationCap />,
       highlights: [
-        'Data Structures & Algorithms',
-        'Software Engineering',
-        'Database Management Systems',
-        'Computer Networks',
+        'Software Engineering Principles',
+        'Full-Stack Web Development',
+        'Agile Development Methodologies',
+        'Systems Architecture & Design',
+        'Database Management & Optimization',
       ],
     },
     {
-      degree: 'Self-Taught & Certified',
-      field: 'Full-Stack Web Development',
-      school: 'Online Learning Platforms',
-      year: '2021 — Present',
-      status: 'Ongoing',
-      icon: <FaBook />,
+      degree: 'Bachelor of Technology',
+      field: 'Statistics',
+      school: 'Federal University of Technology, Owerri',
+      year: '2017 — 2022',
+      status: 'Completed',
+      icon: <FaUniversity />,
       highlights: [
-        'React & Next.js Mastery',
-        'Node.js Backend Development',
-        '.NET Core & C# Development',
-        'Cloud Architecture (AWS)',
+        'Statistical Modeling & Inference',
+        'Data Analysis & Visualization',
+        'Mathematical Foundations',
+        'Research Methodology',
       ],
     },
   ]
@@ -159,22 +163,22 @@ const About = () => {
     {
       icon: <FaLightbulb />,
       title: 'Innovation First',
-      desc: 'I approach every project with fresh thinking, seeking creative solutions that push boundaries.',
+      desc: 'Every project is an opportunity to think differently and push the boundaries of what\'s possible with technology.',
     },
     {
       icon: <FaUsers />,
-      title: 'User-Centered',
-      desc: "Great software starts with understanding people. I build for real users with real needs.",
+      title: 'User-Centered Design',
+      desc: 'Great software starts with empathy. I design for real people with real needs, focusing on usability and accessibility.',
     },
     {
       icon: <FaShieldAlt />,
-      title: 'Quality Code',
-      desc: 'Clean, maintainable, well-tested code. No shortcuts — every line is written with purpose.',
+      title: 'Quality & Integrity',
+      desc: 'Clean, maintainable, well-tested code is non-negotiable. No shortcuts — every line is written with purpose and precision.',
     },
     {
       icon: <FaBolt />,
       title: 'Continuous Growth',
-      desc: "Tech evolves fast, and so do I. I'm always learning, experimenting, and improving.",
+      desc: 'Technology evolves rapidly, and so do I. I\'m committed to lifelong learning, experimentation, and staying at the forefront of innovation.',
     },
   ]
 
@@ -238,7 +242,7 @@ const About = () => {
 
                     {/* Actual photo */}
                     <img
-                      src="/src/assets/profile.jpg"
+                      src="/profile.jpg"
                       alt="Henry Osuagwu — Full-Stack Developer"
                       className="w-full h-full object-cover"
                       onError={(e) => {
@@ -370,7 +374,7 @@ const About = () => {
               </h1>
 
               <div className="space-y-4 mt-6">
-                <p className="text-[#C1C7D0] text-lg leading-relaxed">
+                <p className="text-[#C1C7D0] text-lg leading-relaxed text-justify">
                   I'm{' '}
                   <span className="text-[#F5F7FA] font-semibold">
                     Henry Osuagwu
@@ -379,32 +383,39 @@ const About = () => {
                   <span className="text-[#F5F7FA] font-semibold">
                     Lagos, Nigeria
                   </span>
-                  . I specialize in building high-performance web applications
-                  that solve real problems for real people. With over{' '}
+                  . I hold a{' '}
+                  <span className="text-[#FF6B35] font-semibold">
+                    B.Sc. in Software Development from Brigham Young University — Idaho (2024—2026)
+                  </span>
+                  , with a focus on{' '}
+                  <span className="text-[#FF6B35] font-semibold">
+                    Web Development
+                  </span>
+                  , and a{' '}
+                  <span className="text-[#FF6B35] font-semibold">
+                    B.Tech. in Statistics from the Federal University of Technology, Owerri (2017—2022)
+                  </span>
+                  . This unique combination of statistical reasoning and software engineering gives me a powerful analytical approach to building high-performance web applications.
+                </p>
+
+                <p className="text-[#9AA4B2] text-lg leading-relaxed text-justify">
+                  With over{' '}
                   <span className="text-[#FF6B35] font-semibold">
                     4 years of experience
                   </span>
-                  , I've crafted everything from e-commerce platforms to
-                  AI-powered collaboration tools.
+                  , I've crafted everything from e-commerce platforms to AI-powered collaboration tools. My journey started with a curiosity for data and patterns, evolved through a self-taught programming phase, and matured into a full-fledged development career. I'm driven by the belief that technology can transform lives — especially across Africa.
                 </p>
 
-                <p className="text-[#9AA4B2] text-lg leading-relaxed">
-                  My journey started with curiosity and a laptop — now it's
-                  evolved into a career driven by the belief that technology can
-                  transform lives, especially across Africa. Under my brand{' '}
+                <p className="text-[#9AA4B2] text-lg leading-relaxed text-justify">
+                  Under my brand{' '}
                   <span className="text-[#FF6B35] font-semibold font-['JetBrains_Mono']">
                     IMPULSIBLE
                   </span>
-                  , I'm building purpose-driven digital solutions tailored for
-                  the Nigerian market while maintaining global standards.
+                  , I'm building purpose-driven digital solutions tailored for the Nigerian market while maintaining global standards. My background in statistics gives me a unique edge in data-driven development, ensuring that the products I build are not just functional but also analytically sound and user-centric.
                 </p>
 
-                <p className="text-[#9AA4B2] text-lg leading-relaxed">
-                  When I'm not coding, you'll find me exploring new
-                  technologies, contributing to open source, or brainstorming
-                  the next product that could make a difference. I believe in
-                  writing clean, maintainable code and creating experiences that
-                  users genuinely enjoy.
+                <p className="text-[#9AA4B2] text-lg leading-relaxed text-justify">
+                  When I'm not coding, I'm exploring new technologies, contributing to open source, reading about emerging trends, or brainstorming the next product that could make a meaningful difference. I believe in writing clean, maintainable code and creating experiences that users genuinely enjoy.
                 </p>
               </div>
 
@@ -412,9 +423,7 @@ const About = () => {
               <div className="mt-8 p-5 bg-[#151A20] rounded-xl border border-[#242A32] relative">
                 <FaQuoteLeft className="absolute top-4 right-4 text-[#FF6B35]/10 text-3xl" />
                 <p className="text-[#C1C7D0] italic leading-relaxed">
-                  "I don't just write code — I craft solutions. Every project is
-                  a chance to solve a real problem and make technology accessible
-                  to everyone."
+                  "I don't just write code — I craft solutions. Every project is a chance to solve a real problem and make technology accessible to everyone."
                 </p>
                 <div className="flex items-center gap-2 mt-3">
                   <div className="w-6 h-6 rounded-md bg-gradient-to-br from-[#FF6B35] to-[#FFB86B] flex items-center justify-center text-[#0B0D10] text-[9px] font-bold">
@@ -454,10 +463,10 @@ const About = () => {
                 icon: <FaCalendarAlt />,
               },
               {
-                value: 10,
-                suffix: '+',
-                label: 'Technologies',
-                icon: <FaBolt />,
+                value: 2,
+                suffix: '',
+                label: 'Degrees Earned',
+                icon: <FaGraduationCap />,
               },
               {
                 value: 100,
@@ -514,19 +523,19 @@ const About = () => {
               {
                 icon: <FaLaptopCode />,
                 title: 'Frontend Development',
-                desc: 'Pixel-perfect, responsive interfaces with React, Next.js, TypeScript, and Tailwind CSS.',
+                desc: 'Pixel-perfect, responsive interfaces with React, Next.js, TypeScript, and Tailwind CSS. Crafting accessible, performant user experiences.',
                 skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
               },
               {
                 icon: <FaServer />,
                 title: 'Backend Development',
-                desc: 'Robust APIs and server-side logic with Node.js, ASP.NET Core, and Express.',
+                desc: 'Robust APIs and server-side logic with Node.js, ASP.NET Core, and Express. Building secure, scalable systems architecture.',
                 skills: ['Node.js', 'ASP.NET Core', 'Express', 'REST APIs'],
               },
               {
                 icon: <FaDatabase />,
                 title: 'Database Design',
-                desc: 'Efficient data modeling and management with PostgreSQL, MongoDB, and SQL Server.',
+                desc: 'Efficient data modeling and management with PostgreSQL, MongoDB, and SQL Server. Optimizing queries and data structures.',
                 skills: [
                   'PostgreSQL',
                   'MongoDB',
@@ -537,19 +546,19 @@ const About = () => {
               {
                 icon: <FaPaintBrush />,
                 title: 'UI/UX Design',
-                desc: 'User-centered interfaces with clean aesthetics, accessibility, and great usability.',
+                desc: 'User-centered interfaces with clean aesthetics, accessibility, and great usability. Designing intuitive, engaging experiences.',
                 skills: ['Figma', 'Responsive', 'Accessibility', 'Prototyping'],
               },
               {
                 icon: <FaCloud />,
                 title: 'Cloud & DevOps',
-                desc: 'Deploying and scaling applications with AWS, Docker, and CI/CD pipelines.',
+                desc: 'Deploying and scaling applications with AWS, Docker, and CI/CD pipelines. Streamlining development and deployment workflows.',
                 skills: ['AWS', 'Docker', 'Firebase', 'CI/CD'],
               },
               {
                 icon: <FaMobile />,
                 title: 'Mobile-First Approach',
-                desc: 'Building applications that work flawlessly on every device and screen size.',
+                desc: 'Building applications that work flawlessly on every device and screen size. Optimizing for performance and user experience.',
                 skills: [
                   'Progressive Web Apps',
                   'Responsive',
@@ -610,15 +619,14 @@ const About = () => {
               </span>
             </div>
             <h2 className="font-['Space_Grotesk'] text-4xl md:text-5xl font-bold text-[#F5F7FA] leading-tight">
-              Learning &
+              Academic
               <span className="bg-gradient-to-r from-[#FF6B35] to-[#FFB86B] bg-clip-text text-transparent">
                 {' '}
-                growth
+                foundation
               </span>
             </h2>
             <p className="text-[#9AA4B2] text-lg max-w-xl mt-3">
-              A blend of formal education and self-driven learning that shaped
-              my technical foundation.
+              A dual-degree background that combines statistical reasoning with software engineering excellence.
             </p>
           </motion.div>
 
@@ -646,22 +654,16 @@ const About = () => {
                         <p className="text-[#FF6B35] text-sm font-medium">
                           {edu.field}
                         </p>
+                        {edu.subfield && (
+                          <p className="text-[#9AA4B2] text-xs font-['JetBrains_Mono'] mt-0.5">
+                            Focus: {edu.subfield}
+                          </p>
+                        )}
                       </div>
                       <span
-                        className={`flex-shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-['JetBrains_Mono'] ${
-                          edu.status === 'Completed'
-                            ? 'bg-green-500/10 text-green-400 border border-green-500/20'
-                            : 'bg-[#FF6B35]/10 text-[#FF6B35] border border-[#FF6B35]/20'
-                        }`}
+                        className={`flex-shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-['JetBrains_Mono'] bg-green-500/10 text-green-400 border border-green-500/20`}
                       >
-                        {edu.status === 'Completed' ? (
-                          <FaCheckCircle className="text-[8px]" />
-                        ) : (
-                          <span className="relative flex h-1.5 w-1.5">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6B35] opacity-75" />
-                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#FF6B35]" />
-                          </span>
-                        )}
+                        <FaCheckCircle className="text-[8px]" />
                         {edu.status}
                       </span>
                     </div>
@@ -915,15 +917,11 @@ const About = () => {
                   developer
                 </span>
               </h2>
-              <p className="text-[#9AA4B2] text-lg mt-6 leading-relaxed">
-                I believe the best developers are well-rounded individuals.
-                Outside of coding, I invest time in activities that fuel
-                creativity, broaden perspectives, and keep life interesting.
+              <p className="text-[#9AA4B2] text-lg mt-6 leading-relaxed text-justify">
+                I believe the best developers are well-rounded individuals who bring diverse perspectives to problem-solving. Outside of coding, I invest time in activities that fuel creativity, broaden perspectives, and keep life interesting.
               </p>
-              <p className="text-[#9AA4B2] text-lg mt-4 leading-relaxed">
-                Whether it's exploring new music, diving into a great book, or
-                planning the next travel adventure — these experiences shape how
-                I think about problems and design solutions.
+              <p className="text-[#9AA4B2] text-lg mt-4 leading-relaxed text-justify">
+                Whether it's exploring new music, diving into a great book, planning the next travel adventure, or contributing to open-source projects — these experiences shape how I think about problems and design solutions. They remind me that technology is ultimately about people and the lives we can improve.
               </p>
 
               {/* Interests */}
@@ -966,6 +964,10 @@ const About = () => {
                       fact: "Based in Lagos, Nigeria — building for Africa and the world",
                     },
                     {
+                      emoji: '🎓',
+                      fact: 'Dual-degree holder: B.Sc. Software Development (BYU-Idaho, 2024—2026) with focus on Web Development + B.Tech. Statistics (FUTO, 2017—2022)',
+                    },
+                    {
                       emoji: '☕',
                       fact: 'Fueled by coffee — my productivity partner since day one',
                     },
@@ -975,19 +977,15 @@ const About = () => {
                     },
                     {
                       emoji: '📚',
-                      fact: 'Constant learner — always exploring new technologies',
+                      fact: 'Constant learner — always exploring new technologies and frameworks',
                     },
                     {
                       emoji: '🎯',
-                      fact: 'Detail-oriented — pixel perfection is a lifestyle',
-                    },
-                    {
-                      emoji: '🤝',
-                      fact: 'Team player — collaboration over competition, always',
+                      fact: 'Detail-oriented — pixel perfection is a lifestyle, not a goal',
                     },
                     {
                       emoji: '🚀',
-                      fact: 'IMPULSIBLE — my brand, my philosophy, my mission',
+                      fact: 'IMPULSIBLE — my brand, my philosophy, my mission to build impactful solutions',
                     },
                   ].map((item, i) => (
                     <motion.div
@@ -1036,8 +1034,7 @@ const About = () => {
               </span>
             </h2>
             <p className="text-[#9AA4B2] text-lg max-w-xl mx-auto mt-4 leading-relaxed">
-              I'm always looking for new opportunities, interesting projects, and
-              great people to work with. Let's connect!
+              I'm always looking for new opportunities, interesting projects, and great people to work with. Let's connect!
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mt-8">

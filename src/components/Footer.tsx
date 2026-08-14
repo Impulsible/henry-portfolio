@@ -6,7 +6,6 @@ import {
   FaEnvelope,
   FaArrowUp,
   FaMapMarkerAlt,
-  FaRocket,
 } from 'react-icons/fa'
 import { SiReact, SiTypescript, SiTailwindcss } from 'react-icons/si'
 
@@ -20,19 +19,22 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#0A0C0F] relative overflow-hidden">
-      {/* Subtle top gradient line */}
       <div className="h-px bg-gradient-to-r from-transparent via-[#FF6B35]/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* MAIN FOOTER GRID (mobile-first) */}
+        {/* MAIN FOOTER GRID */}
         <div className="py-12 sm:py-14 md:py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 sm:gap-8 md:gap-8 lg:gap-10">
           {/* Brand */}
           <div className="sm:col-span-2 md:col-span-4">
             <Link to="/" className="inline-flex items-center gap-2.5 group">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#FF6B35] to-[#FFB86B] flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(255,107,53,0.4)] transition-all duration-300 flex-shrink-0">
-                <span className="font-['Space_Grotesk'] text-sm sm:text-base font-bold text-[#0B0D10]">
-                  HO
-                </span>
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#FF6B35] to-[#FFB86B] p-[2px] group-hover:shadow-[0_0_20px_rgba(255,107,53,0.4)] transition-all duration-300 flex-shrink-0">
+                <div className="w-full h-full rounded-xl bg-[#0B0D10] overflow-hidden flex items-center justify-center">
+                  <img 
+                    src="/logo.png" 
+                    alt="IMPULSIBLE" 
+                    className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
+                  />
+                </div>
               </div>
               <div className="min-w-0">
                 <span className="font-['Space_Grotesk'] text-base sm:text-lg font-bold text-[#F5F7FA] tracking-tight">
@@ -54,7 +56,6 @@ const Footer = () => {
               <span>Lagos, Nigeria 🇳🇬</span>
             </div>
 
-            {/* Availability status */}
             <div className="inline-flex items-center gap-2 mt-4 px-3 py-1.5 bg-[#0B0D10] border border-[#242A32]/50 rounded-full">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
@@ -173,10 +174,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* ──────────────────────────────────────────────
-            "BUILT WITH" STRIP
-            Sits above the bottom bar as a subtle attribution row
-            ────────────────────────────────────────────── */}
+        {/* "BUILT WITH" STRIP */}
         <div className="py-4 border-t border-[#1A1F27]/50">
           <div className="flex items-center justify-center gap-2 text-[11px] sm:text-xs text-[#4A5568]">
             <span className="font-['JetBrains_Mono'] tracking-wider uppercase">Built with</span>
@@ -199,14 +197,16 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* ──────────────────────────────────────────────
-            BOTTOM BAR — modern, professional, mobile-first
-            ────────────────────────────────────────────── */}
+        {/* BOTTOM BAR */}
         <div className="py-5 sm:py-6 border-t border-[#1A1F27]/50">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 items-center">
             {/* Left: Brand */}
             <div className="flex items-center justify-center sm:justify-start gap-2 text-xs text-[#4A5568]">
-              <FaRocket className="text-[#FF6B35]/40 text-[11px]" />
+              <img 
+                src="/logo.png" 
+                alt="IMPULSIBLE" 
+                className="w-4 h-4 object-contain"
+              />
               <span className="font-['JetBrains_Mono'] tracking-wider">IMPULSIBLE</span>
             </div>
 
