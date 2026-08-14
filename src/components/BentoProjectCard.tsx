@@ -6,10 +6,11 @@ import { projects } from '../data/projects'
 
 interface BentoProjectCardProps {
   project: typeof projects[number]
+  variant?: 'featured' | 'compact'  // ← Add this
   index: number
 }
 
-const BentoProjectCard = ({ project, index }: BentoProjectCardProps) => {
+const BentoProjectCard = ({ project, variant = 'compact', index }: BentoProjectCardProps) => {
   const [imgFailed, setImgFailed] = useState(false)
   const firstScreenshot = project.screenshots?.[0]
   const showImage = firstScreenshot && !imgFailed
@@ -23,6 +24,9 @@ const BentoProjectCard = ({ project, index }: BentoProjectCardProps) => {
 
   const isCompleted = project.status === 'completed'
 
+  // Dynamic sizing based on variant
+  const isFeatured = variant === 'featured'
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -35,9 +39,11 @@ const BentoProjectCard = ({ project, index }: BentoProjectCardProps) => {
         to={`/projects/${project.id}`}
         className="group relative flex flex-col bg-[#0F1318] rounded-3xl border border-[#1E2530] hover:border-[#FF6B35]/60 transition-all duration-500 overflow-hidden hover:shadow-[0_0_80px_rgba(255,107,53,0.12)] h-full"
       >
-        {/* ── IMAGE AREA — uniform 16:10 aspect ratio ── */}
+        {/* ── IMAGE AREA — responsive aspect ratio ── */}
         <div
-          className={`relative flex-shrink-0 overflow-hidden bg-gradient-to-br ${project.color} aspect-[16/10]`}
+          className={`relative flex-shrink-0 overflow-hidden bg-gradient-to-br ${project.color} ${
+            isFeatured ? 'aspect-[16/10]' : 'aspect-[16/9]'
+          }`}
         >
           {/* Subtle inner canvas */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#0B0D10]/40 to-[#0B0D10]/70" />
@@ -65,7 +71,11 @@ const BentoProjectCard = ({ project, index }: BentoProjectCardProps) => {
           ) : (
             /* ── EMOJI FALLBACK ── */
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-[6rem] drop-shadow-2xl transition-transform duration-500 group-hover:scale-110 select-none">
+              <span
+                className={`drop-shadow-2xl transition-transform duration-500 group-hover:scale-110 select-none ${
+                  isFeatured ? 'text-[7rem]' : 'text-[5rem]'
+                }`}
+              >
                 {project.image}
               </span>
             </div>
@@ -112,18 +122,26 @@ const BentoProjectCard = ({ project, index }: BentoProjectCardProps) => {
         {/* ── CONTENT AREA ── */}
         <div className="flex flex-col flex-1 p-6 gap-4">
           {/* Title */}
-          <h3 className="font-['Space_Grotesk'] font-bold text-xl text-[#F5F7FA] group-hover:text-[#FF6B35] transition-colors duration-300 leading-tight">
+          <h3
+            className={`font-['Space_Grotesk'] font-bold text-[#F5F7FA] group-hover:text-[#FF6B35] transition-colors duration-300 leading-tight ${
+              isFeatured ? 'text-2xl' : 'text-xl'
+            }`}
+          >
             {project.title}
           </h3>
 
           {/* Description */}
-          <p className="text-[#9AA4B2] text-sm leading-relaxed line-clamp-2">
+          <p
+            className={`text-[#9AA4B2] text-sm leading-relaxed ${
+              isFeatured ? 'line-clamp-3' : 'line-clamp-2'
+            }`}
+          >
             {project.description}
           </p>
 
           {/* Tech pills */}
           <div className="flex flex-wrap gap-1.5 mt-auto">
-            {project.tech.slice(0, 4).map((tech) => (
+            {project.tech.slice(0, isFeatured ? 6 : 4).map((tech) => (
               <span
                 key={tech}
                 className="px-2.5 py-1 bg-[#151A20] border border-[#242A32] rounded-lg text-[11px] text-[#9AA4B2] font-['JetBrains_Mono'] group-hover:border-[#FF6B35]/20 transition-colors"
@@ -131,9 +149,9 @@ const BentoProjectCard = ({ project, index }: BentoProjectCardProps) => {
                 {tech}
               </span>
             ))}
-            {project.tech.length > 4 && (
+            {project.tech.length > (isFeatured ? 6 : 4) && (
               <span className="px-2.5 py-1 bg-[#FF6B35]/10 border border-[#FF6B35]/20 rounded-lg text-[11px] text-[#FF6B35] font-['JetBrains_Mono']">
-                +{project.tech.length - 4}
+                +{project.tech.length - (isFeatured ? 6 : 4)}
               </span>
             )}
           </div>

@@ -258,9 +258,7 @@ const Skills = () => {
                 <button
                   key={v}
                   onClick={() => setView(v)}
-                  className={`relative px-4 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                    view === v ? 'text-[#0B0D10]' : 'text-[#9AA4B2] hover:text-[#F5F7FA]'
-                  }`}
+                  className={`relative px-4 py-1.5 rounded-lg text-xs font-medium transition-all ${view === v ? 'text-[#0B0D10]' : 'text-[#9AA4B2] hover:text-[#F5F7FA]'}`}
                 >
                   {view === v && (
                     <motion.div
@@ -274,9 +272,10 @@ const Skills = () => {
               ))}
             </div>
 
-            {/* Resume CTA */}
+            {/* ── Resume CTA ── */}
             <a
-              href="#"
+              href="/resume.pdf"
+              download
               className="hidden sm:flex items-center gap-2 px-4 py-2.5 bg-[#FF6B35]/10 border border-[#FF6B35]/20 rounded-xl text-sm text-[#FF6B35] hover:bg-[#FF6B35]/20 transition-all"
             >
               <FaDownload className="text-xs" />

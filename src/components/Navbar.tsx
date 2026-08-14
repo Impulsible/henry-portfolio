@@ -86,7 +86,6 @@ const Navbar = () => {
               to="/"
               className="relative z-50 flex items-center gap-2 group"
             >
-              {/* Logo image */}
               <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#FF6B35] to-[#FFB86B] p-[2px] shadow-lg shadow-[#FF6B35]/20 group-hover:shadow-[0_0_30px_rgba(255,107,53,0.4)] transition-all duration-300 group-hover:scale-105">
                 <div className="w-full h-full rounded-xl bg-[#0B0D10] overflow-hidden flex items-center justify-center">
                   <img 
@@ -96,7 +95,6 @@ const Navbar = () => {
                   />
                 </div>
               </div>
-              {/* Logo text */}
               <div className="hidden sm:block">
                 <span className="font-['Space_Grotesk'] text-lg font-bold text-[#F5F7FA] tracking-tight">
                   HENRY
@@ -160,8 +158,10 @@ const Navbar = () => {
                 <FaGithub />
               </a>
 
+              {/* ── Resume Button ── */}
               <a
-                href="#"
+                href="/resume.pdf"
+                download
                 className="group px-5 py-2.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8F5E] text-[#0B0D10] font-semibold rounded-xl text-sm hover:shadow-[0_0_25px_rgba(255,107,53,0.3)] transition-all duration-300 hover:scale-[1.02] inline-flex items-center gap-2 relative overflow-hidden"
               >
                 <span className="relative z-10">Resume</span>
@@ -323,8 +323,10 @@ const Navbar = () => {
                   Quick Actions
                 </p>
                 <motion.div variants={itemVariants} className="space-y-2">
+                  {/* ── Mobile Resume Button ── */}
                   <a
-                    href="#"
+                    href="/resume.pdf"
+                    download
                     onClick={() => setIsOpen(false)}
                     className="flex items-center gap-4 px-4 py-3.5 rounded-xl bg-gradient-to-r from-[#FF6B35]/10 to-[#FFB86B]/5 border border-[#FF6B35]/20 hover:border-[#FF6B35]/40 transition-all group"
                   >

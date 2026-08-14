@@ -90,7 +90,7 @@ const About = () => {
       subtitle: 'IMPULSIBLE — Building Innovative Solutions',
       description:
         'Currently focused on building impactful digital products for the Nigerian market and beyond. Leading development of Naija Snacks logistics platform, AI-powered collaboration tools, and interactive detective investigation games. Driving the vision of IMPULSIBLE as a brand that creates purpose-driven technology solutions.',
-      icon: <FaRocket />,
+      icon: <img src="/logo.png" alt="IMPULSIBLE" className="w-8 h-8 object-contain" />,
       color: 'from-[#FF6B35] to-[#FFB86B]',
       tags: ['React', 'Node.js', 'TypeScript', 'MongoDB', 'AI/ML'],
     },
@@ -335,8 +335,10 @@ const About = () => {
                           {s.icon}
                         </a>
                       ))}
+                      {/* ── Resume Button ── */}
                       <a
-                        href="#"
+                        href="/resume.pdf"
+                        download
                         className="ml-auto flex items-center gap-1.5 px-3 py-1.5 bg-[#FF6B35]/10 border border-[#FF6B35]/20 rounded-lg text-xs text-[#FF6B35] hover:bg-[#FF6B35]/20 transition-all"
                       >
                         <FaDownload className="text-[10px]" />
@@ -427,7 +429,7 @@ const About = () => {
                 </p>
                 <div className="flex items-center gap-2 mt-3">
                   <div className="w-6 h-6 rounded-md bg-gradient-to-br from-[#FF6B35] to-[#FFB86B] flex items-center justify-center text-[#0B0D10] text-[9px] font-bold">
-                    H
+                    <img src="/logo.png" alt="IMPULSIBLE" className="w-5 h-5 object-contain" />
                   </div>
                   <span className="text-xs text-[#6B7280]">
                     — Henry Osuagwu

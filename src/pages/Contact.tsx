@@ -682,7 +682,11 @@ const Contact = () => {
               <div className="bg-[#151A20] rounded-2xl border border-[#242A32] p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#FF6B35] to-[#FFB86B] flex items-center justify-center">
-                    <FaRocket className="text-[#0B0D10] text-sm" />
+                    <img 
+                      src="/logo.png" 
+                      alt="IMPULSIBLE" 
+                      className="w-6 h-6 object-contain"
+                    />
                   </div>
                   <h3 className="font-['Space_Grotesk'] font-bold text-[#F5F7FA]">
                     Why work with me?
@@ -775,7 +779,7 @@ const Contact = () => {
                     { icon: <FaLaptopCode />, label: 'Web Apps' },
                     { icon: <FaCode />, label: 'APIs & Backend' },
                     { icon: <FaBolt />, label: 'UI/UX Dev' },
-                    { icon: <FaRocket />, label: 'Consulting' },
+                    { icon: <img src="/logo.png" alt="IMPULSIBLE" className="w-4 h-4 object-contain" />, label: 'Consulting' },
                   ].map((s, i) => (
                     <div
                       key={i}

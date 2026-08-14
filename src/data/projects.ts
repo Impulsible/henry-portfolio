@@ -31,8 +31,8 @@ export const projects: Project[] = [
     color: 'from-green-500/20 to-emerald-500/20',
     category: 'Full-Stack',
     flag: '🇳🇬',
-    status: 'building',
-    year: '2024',
+    status: 'planning',
+    year: '2026',
     type: 'Web Application',
     screenshots: [
       '/projects/screenshots/1-1.png',
@@ -52,8 +52,8 @@ export const projects: Project[] = [
       'Integrating Nigerian payment gateways',
       'Building an accurate address system for Lagos',
     ],
-    liveUrl: 'https://naija-snacks.onrender.com/',
-    githubUrl: 'https://github.com/Impulsible/Naija-Snacks',
+    liveUrl: '#',
+    githubUrl: '#',
   },
   {
     id: 2,
@@ -66,8 +66,8 @@ export const projects: Project[] = [
     image: '🕵️',
     color: 'from-purple-500/20 to-pink-500/20',
     category: 'Full-Stack',
-    status: 'building',
-    year: '2024',
+    status: 'planning',
+    year: '2026',
     type: 'Interactive Game',
     screenshots: [
       '/projects/screenshots/2-1.png',
@@ -86,8 +86,8 @@ export const projects: Project[] = [
       'Balancing game difficulty curve',
       'Real-time state synchronization',
     ],
-    liveUrl: 'https://detective-game.onrender.com/',
-    githubUrl: 'https://github.com/Impulsible/Detective-Game',
+    liveUrl: '#',
+    githubUrl: '#',
   },
   {
     id: 3,
@@ -101,7 +101,7 @@ export const projects: Project[] = [
     color: 'from-cyan-500/20 to-blue-500/20',
     category: 'Full-Stack',
     status: 'completed',
-    year: '2024',
+    year: '2026',
     type: 'Enterprise Tool',
     screenshots: [
       '/projects/screenshots/3-1.png',
@@ -122,8 +122,8 @@ export const projects: Project[] = [
       'Handling high-frequency stock updates with Redis',
       'Designing an intuitive barcode scanning UX',
     ],
-    liveUrl: 'https://inventory-tracker.onrender.com/',
-    githubUrl: 'https://github.com/Impulsible/Inventory-Tracker',
+    liveUrl: 'https://smartbiz-api-nfxu.onrender.com/',
+    githubUrl: 'https://github.com/dandrichest/smartbiz',
   },
   {
     id: 4,
@@ -156,8 +156,8 @@ export const projects: Project[] = [
       'Integrating AI without disrupting UX',
       'Building a permissions system flexible enough for any team',
     ],
-    liveUrl: 'https://pulse-platform.onrender.com/',
-    githubUrl: 'https://github.com/Impulsible/Pulse-Platform',
+    liveUrl: '#',
+    githubUrl: '#',
   },
   {
     id: 5,
@@ -214,17 +214,18 @@ export const projects: Project[] = [
     features: [
       'Student enrollment system',
       'Course management',
-      'Grade tracking and transcripts',
+      'Grade tracking and report cards',
       'Administration dashboard',
-      'Parent/teacher communication',
+       'CBT integration for exams',
+  
     ],
     challenges: [
       'Modeling complex academic structures in a relational DB',
       'Role-based access for students, teachers, and admins',
-      'Generating printable transcripts dynamically',
+      'Generating printable report cards dynamically',
     ],
-    liveUrl: 'https://school-management-portal.onrender.com/',
-    githubUrl: 'https://github.com/Impulsible/School-Management-Portal',
+    liveUrl: 'https://vincollins-portal.vercel.app/',
+    githubUrl: 'https://github.com/Impulsible/vincollins-portal',
   },
   {
     id: 7,
@@ -256,7 +257,7 @@ export const projects: Project[] = [
       'Handling Paystack Connect for multi-vendor payouts',
       'Optimizing image-heavy pages for slow connections',
     ],
-    liveUrl: 'https://handmaiden-craft.onrender.com/',
-    githubUrl: 'https://github.com/Impulsible/Handmaiden-Craft',
+    liveUrl: 'https://handcrafted-haven-gold.vercel.app/',
+    githubUrl: 'https://github.com/Impulsible/handcrafted-haven',
   },
 ]

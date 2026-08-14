@@ -317,7 +317,7 @@ const Home = () => {
                 that make an impact in the Nigerian tech ecosystem and beyond.
               </motion.p>
 
-              {/* Location & timezone — Updated with logo image */}
+              {/* Location & timezone */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -366,8 +366,10 @@ const Home = () => {
                   Let's Talk
                 </Link>
 
+                {/* ── Resume Button ── */}
                 <a
-                  href="#"
+                  href="/resume.pdf"
+                  download
                   className="px-8 py-4 rounded-xl text-[#9AA4B2] hover:text-[#FF6B35] transition-all duration-300 inline-flex items-center gap-3 hover:bg-[#151A20] group"
                 >
                   <FaDownload className="group-hover:animate-bounce" />
@@ -1062,7 +1064,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== IMPULSIBLE BRAND — Updated with logo image ===== */}
+      {/* ===== IMPULSIBLE BRAND ===== */}
       <section className="py-24 md:py-32 bg-[#0B0D10] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#FF6B35]/5 rounded-full blur-3xl" />
@@ -1075,7 +1077,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {/* Brand icon — Logo image instead of rocket */}
+            {/* Brand icon */}
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-br from-[#FF6B35] to-[#FFB86B] mb-8 shadow-[0_0_60px_rgba(255,107,53,0.3)] p-1">
               <div className="w-full h-full rounded-2xl bg-[#0B0D10] overflow-hidden flex items-center justify-center">
                 <img 
@@ -1217,36 +1219,81 @@ const Home = () => {
             viewport={{ once: true }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
           >
-            {[
-              { to: '/projects', icon: <FaCode className="text-lg sm:text-xl text-[#FF6B35]" />,       label: 'Projects', desc: 'View my portfolio'   },
-              { to: '/about',    icon: <FaLaptopCode className="text-lg sm:text-xl text-[#FF6B35]" />, label: 'About',    desc: 'My journey & story'  },
-              { to: '/skills',   icon: <FaBolt className="text-lg sm:text-xl text-[#FF6B35]" />,       label: 'Skills',   desc: 'Technologies I use'  },
-              { to: '/contact',  icon: <FaEnvelope className="text-lg sm:text-xl text-[#FF6B35]" />,   label: 'Contact',  desc: 'Get in touch'        },
-            ].map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className="group bg-[#0B0D10] p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-[#1A1F27] hover:border-[#FF6B35]/40 transition-all duration-300 hover:-translate-y-1 active:scale-[0.98] flex items-center gap-3 sm:gap-4 min-w-0"
-              >
-                {/* Icon */}
-                <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-[#FF6B35]/10 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
-                  {item.icon}
-                </div>
+            {/* ── Projects ── */}
+            <Link
+              to="/projects"
+              className="group bg-[#0B0D10] p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-[#1A1F27] hover:border-[#FF6B35]/40 transition-all duration-300 hover:-translate-y-1 active:scale-[0.98] flex items-center gap-3 sm:gap-4 min-w-0"
+            >
+              <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-[#FF6B35]/10 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                <FaCode className="text-lg sm:text-xl text-[#FF6B35]" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h3 className="font-['Space_Grotesk'] font-bold text-sm sm:text-base text-[#F5F7FA] group-hover:text-[#FF6B35] transition-colors truncate">
+                  Projects
+                </h3>
+                <p className="text-[11px] sm:text-xs text-[#6B7280] truncate">
+                  View my portfolio
+                </p>
+              </div>
+              <FaArrowRight className="text-[10px] sm:text-xs text-[#3A4150] group-hover:text-[#FF6B35] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+            </Link>
 
-                {/* Text */}
-                <div className="min-w-0 flex-1">
-                  <h3 className="font-['Space_Grotesk'] font-bold text-sm sm:text-base text-[#F5F7FA] group-hover:text-[#FF6B35] transition-colors truncate">
-                    {item.label}
-                  </h3>
-                  <p className="text-[11px] sm:text-xs text-[#6B7280] truncate">
-                    {item.desc}
-                  </p>
-                </div>
+            {/* ── About ── */}
+            <Link
+              to="/about"
+              className="group bg-[#0B0D10] p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-[#1A1F27] hover:border-[#FF6B35]/40 transition-all duration-300 hover:-translate-y-1 active:scale-[0.98] flex items-center gap-3 sm:gap-4 min-w-0"
+            >
+              <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-[#FF6B35]/10 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                <FaLaptopCode className="text-lg sm:text-xl text-[#FF6B35]" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h3 className="font-['Space_Grotesk'] font-bold text-sm sm:text-base text-[#F5F7FA] group-hover:text-[#FF6B35] transition-colors truncate">
+                  About
+                </h3>
+                <p className="text-[11px] sm:text-xs text-[#6B7280] truncate">
+                  My journey & story
+                </p>
+              </div>
+              <FaArrowRight className="text-[10px] sm:text-xs text-[#3A4150] group-hover:text-[#FF6B35] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+            </Link>
 
-                {/* Chevron indicator */}
-                <FaArrowRight className="text-[10px] sm:text-xs text-[#3A4150] group-hover:text-[#FF6B35] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
-              </Link>
-            ))}
+            {/* ── Skills ── */}
+            <Link
+              to="/skills"
+              className="group bg-[#0B0D10] p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-[#1A1F27] hover:border-[#FF6B35]/40 transition-all duration-300 hover:-translate-y-1 active:scale-[0.98] flex items-center gap-3 sm:gap-4 min-w-0"
+            >
+              <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-[#FF6B35]/10 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                <FaBolt className="text-lg sm:text-xl text-[#FF6B35]" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h3 className="font-['Space_Grotesk'] font-bold text-sm sm:text-base text-[#F5F7FA] group-hover:text-[#FF6B35] transition-colors truncate">
+                  Skills
+                </h3>
+                <p className="text-[11px] sm:text-xs text-[#6B7280] truncate">
+                  Technologies I use
+                </p>
+              </div>
+              <FaArrowRight className="text-[10px] sm:text-xs text-[#3A4150] group-hover:text-[#FF6B35] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+            </Link>
+
+            {/* ── Contact ── */}
+            <Link
+              to="/contact"
+              className="group bg-[#0B0D10] p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-[#1A1F27] hover:border-[#FF6B35]/40 transition-all duration-300 hover:-translate-y-1 active:scale-[0.98] flex items-center gap-3 sm:gap-4 min-w-0"
+            >
+              <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-[#FF6B35]/10 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                <FaEnvelope className="text-lg sm:text-xl text-[#FF6B35]" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h3 className="font-['Space_Grotesk'] font-bold text-sm sm:text-base text-[#F5F7FA] group-hover:text-[#FF6B35] transition-colors truncate">
+                  Contact
+                </h3>
+                <p className="text-[11px] sm:text-xs text-[#6B7280] truncate">
+                  Get in touch
+                </p>
+              </div>
+              <FaArrowRight className="text-[10px] sm:text-xs text-[#3A4150] group-hover:text-[#FF6B35] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+            </Link>
           </motion.div>
         </div>
       </section>

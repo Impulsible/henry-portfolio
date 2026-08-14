@@ -1,5 +1,4 @@
 import { projects } from '../data/projects'
-import ProjectCard from '../components/ProjectCard'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -10,6 +9,7 @@ import {
   FaSearch,
   FaGithub,
 } from 'react-icons/fa'
+import BentoProjectCard from '../components/BentoProjectCard'
 
 const Projects = () => {
   const [filter, setFilter] = useState<'all' | 'building' | 'completed'>('all')
@@ -198,7 +198,7 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* ===== PROJECTS GRID ===== */}
+      {/* ===== PROJECTS GRID - 3 COLUMN BENTO ===== */}
       <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatePresence mode="wait">
@@ -222,14 +222,19 @@ const Projects = () => {
                   </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {/* 3-column Bento Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {filteredProjects.map((project, index) => (
                     <Link
                       to={`/projects/${project.id}`}
                       key={project.id}
-                      className="block"
+                      className="block h-full"
                     >
-                      <ProjectCard project={project} index={index} />
+                      <BentoProjectCard 
+                        project={project} 
+                        variant="compact" 
+                        index={index} 
+                      />
                     </Link>
                   ))}
                 </div>

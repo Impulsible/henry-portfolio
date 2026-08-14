@@ -56,10 +56,10 @@ export const skillCategories: SkillCategory[] = [
       { name: 'MongoDB',         level: 85, years: 3 },
       { name: 'SQL Server',      level: 78, years: 2 },
       { name: 'MySQL',           level: 75, years: 2 },
-      { name: 'Redis',           level: 65, years: 1 },
+      { name: 'Render',           level: 65, years: 1 },
       { name: 'Prisma ORM',      level: 80, years: 2 },
       { name: 'Entity Framework',level: 75, years: 2 },
-      { name: 'Firebase',        level: 70, years: 2 },
+      { name: 'Supabase',        level: 70, years: 2 },
     ],
   },
   {
