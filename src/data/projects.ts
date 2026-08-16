@@ -137,7 +137,7 @@ export const projects: Project[] = [
     color: 'from-blue-500/20 to-cyan-500/20',
     category: 'Full-Stack',
     status: 'building',
-    year: '2024',
+    year: '2026',
     type: 'SaaS Platform',
     screenshots: [
       '/projects/screenshots/4-1.png',
@@ -156,8 +156,8 @@ export const projects: Project[] = [
       'Integrating AI without disrupting UX',
       'Building a permissions system flexible enough for any team',
     ],
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://pulse-ai-two-rust.vercel.app/',
+    githubUrl: 'https://github.com/Impulsible/pulse-ai',
   },
   {
     id: 5,
@@ -174,10 +174,9 @@ export const projects: Project[] = [
     year: '2026',
     type: 'Web Application',
     screenshots: [
-       '/projects/screenshots/5-1.png',
+      '/projects/screenshots/5-1.png',
       '/projects/screenshots/5-2.png',
     ],
-    
     features: [
       'Budget creation & tracking',
       'Expense categorization',
@@ -216,8 +215,7 @@ export const projects: Project[] = [
       'Course management',
       'Grade tracking and report cards',
       'Administration dashboard',
-       'CBT integration for exams',
-  
+      'CBT integration for exams',
     ],
     challenges: [
       'Modeling complex academic structures in a relational DB',
@@ -259,5 +257,43 @@ export const projects: Project[] = [
     ],
     liveUrl: 'https://handcrafted-haven-gold.vercel.app/',
     githubUrl: 'https://github.com/Impulsible/handcrafted-haven',
+  },
+  {
+    id: 8,
+    title: 'Payzix — Financial OS & Payment Infrastructure',
+    description:
+      'A full-stack financial operating system with transaction ledger, payment infrastructure, business management tools, financial analytics, AI-powered intelligence, fraud-risk simulation, and a developer API sandbox.',
+    longDescription:
+      'Payzix is not just a payment app — it\'s a complete financial operating system built for the modern economy. It combines a robust transaction ledger, multi-rail payment infrastructure, business management tools, real-time financial analytics, AI-driven intelligence, fraud-risk simulation, and a fully-featured developer API sandbox — all in one unified platform. Designed to serve businesses, fintechs, and developers, Payzix redefines what a financial platform can be.',
+    tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Redis', 'Docker', 'Kafka', 'AI/ML', 'Paystack', 'WebSocket'],
+    image: '💳',
+    color: 'from-emerald-500/20 to-teal-500/20',
+    category: 'Full-Stack',
+    status: 'building',
+    year: '2026',
+    type: 'Financial Operating System',
+    screenshots: [
+      '/projects/screenshots/8-1.png',
+      '/projects/screenshots/8-2.png',
+      '/projects/screenshots/8-3.png',
+    ],
+    features: [
+      '✅ Transaction Ledger — Immutable, double-entry accounting with real-time reconciliation',
+      '✅ Payment Infrastructure — Multi-rail support (cards, bank transfers, USSD, QR)',
+      '✅ Business Management — Invoicing, expense tracking, multi-entity support',
+      '✅ Financial Analytics — Real-time dashboards, cash flow forecasting, spend insights',
+      '✅ AI-Powered Intelligence — Smart categorization, anomaly detection, predictive insights',
+      '✅ Fraud-Risk Simulation — Simulate fraud scenarios, rule engine, risk scoring',
+      '✅ Developer API Sandbox — Simulate transactions, webhooks, and integration testing',
+    ],
+    challenges: [
+      'Designing an immutable ledger that scales to millions of transactions',
+      'Building a fraud simulation engine that mimics real-world attack patterns',
+      'Orchestrating multi-rail payment flows with idempotency and retry logic',
+      'Creating an API sandbox that is both powerful and intuitive for developers',
+    ],
+    liveUrl: '#',
+    githubUrl: '#',
+    flag: '🚀',
   },
 ]
