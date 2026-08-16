@@ -4,8 +4,13 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
+  base: '/', // ✅ Add this for proper routing
   server: {
     port: 3000,
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: true,
   },
   resolve: {
     alias: {
