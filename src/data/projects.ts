@@ -36,8 +36,6 @@ export const projects: Project[] = [
     type: 'Web Application',
     screenshots: [
       '/projects/screenshots/1-1.png',
-      '/projects/screenshots/1-2.png',
-      '/projects/screenshots/1-3.png',
     ],
     features: [
       'Order management system',
@@ -71,7 +69,6 @@ export const projects: Project[] = [
     type: 'Interactive Game',
     screenshots: [
       '/projects/screenshots/2-1.png',
-      '/projects/screenshots/2-2.png',
     ],
     features: [
       'Clue discovery system',
@@ -105,7 +102,6 @@ export const projects: Project[] = [
     type: 'Enterprise Tool',
     screenshots: [
       '/projects/screenshots/3-1.png',
-      '/projects/screenshots/3-2.png',
     ],
     features: [
       'Real-time inventory tracking',
@@ -132,7 +128,7 @@ export const projects: Project[] = [
       'AI-powered real-time collaboration platform combining messaging, workspaces, and task tracking.',
     longDescription:
       'Pulse redefines team collaboration by weaving AI intelligence directly into the workflow. Teams can create workspaces, communicate in threaded channels, manage tasks with AI-powered prioritization, and get contextual suggestions based on project activity — all in one unified interface.',
-    tech: ['React', 'TypeScript', 'Node.js', 'WebSocket', 'AI/ML', 'Redis'],
+    tech: ['Next.js', 'TypeScript', 'Node.js', 'WebSocket', 'AI/ML', 'Supabase', 'Vercel', 'Tailwind CSS'],
     image: '⚡',
     color: 'from-blue-500/20 to-cyan-500/20',
     category: 'Full-Stack',
@@ -141,7 +137,6 @@ export const projects: Project[] = [
     type: 'SaaS Platform',
     screenshots: [
       '/projects/screenshots/4-1.png',
-      '/projects/screenshots/4-2.png',
     ],
     features: [
       'Real-time messaging with threads',
@@ -175,7 +170,6 @@ export const projects: Project[] = [
     type: 'Web Application',
     screenshots: [
       '/projects/screenshots/5-1.png',
-      '/projects/screenshots/5-2.png',
     ],
     features: [
       'Budget creation & tracking',
@@ -208,7 +202,6 @@ export const projects: Project[] = [
     type: 'Enterprise Portal',
     screenshots: [
       '/projects/screenshots/6-1.png',
-      '/projects/screenshots/6-2.png',
     ],
     features: [
       'Student enrollment system',
@@ -232,7 +225,7 @@ export const projects: Project[] = [
       'Digital marketplace connecting customers with artisans and handmade products.',
     longDescription:
       'Handmaiden Craft is an artisan-first marketplace that gives Nigerian craftspeople a beautiful digital storefront. Artisans can showcase portfolios, list products with rich media, and manage orders — while customers enjoy a curated shopping experience with verified reviews and seamless checkout via Paystack.',
-    tech: ['Nextjs', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Paystack', 'Vercel'],
+    tech: ['Nextjs', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Paystack', 'Vercel'],
     image: '🎨',
     color: 'from-amber-500/20 to-orange-500/20',
     category: 'Full-Stack',
@@ -241,7 +234,6 @@ export const projects: Project[] = [
     type: 'Marketplace',
     screenshots: [
       '/projects/screenshots/7-1.png',
-      '/projects/screenshots/7-2.png',
     ],
     features: [
       'Product listings and search',
@@ -265,7 +257,7 @@ export const projects: Project[] = [
       'A full-stack financial operating system with transaction ledger, payment infrastructure, business management tools, financial analytics, AI-powered intelligence, fraud-risk simulation, and a developer API sandbox.',
     longDescription:
       'Payzix is not just a payment app — it\'s a complete financial operating system built for the modern economy. It combines a robust transaction ledger, multi-rail payment infrastructure, business management tools, real-time financial analytics, AI-driven intelligence, fraud-risk simulation, and a fully-featured developer API sandbox — all in one unified platform. Designed to serve businesses, fintechs, and developers, Payzix redefines what a financial platform can be.',
-    tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Redis', 'Docker', 'Kafka', 'AI/ML', 'Paystack', 'WebSocket'],
+    tech: ['Next.js', 'TypeScript', 'Node.js', 'MongoDB', 'Redis', 'Docker', 'Kafka', 'AI/ML', 'Paystack', 'WebSocket'],
     image: '💳',
     color: 'from-emerald-500/20 to-teal-500/20',
     category: 'Full-Stack',
@@ -274,8 +266,6 @@ export const projects: Project[] = [
     type: 'Financial Operating System',
     screenshots: [
       '/projects/screenshots/8-1.png',
-      '/projects/screenshots/8-2.png',
-      '/projects/screenshots/8-3.png',
     ],
     features: [
       '✅ Transaction Ledger — Immutable, double-entry accounting with real-time reconciliation',
