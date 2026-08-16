@@ -128,7 +128,7 @@ export const projects: Project[] = [
       'AI-powered real-time collaboration platform combining messaging, workspaces, and task tracking.',
     longDescription:
       'Pulse redefines team collaboration by weaving AI intelligence directly into the workflow. Teams can create workspaces, communicate in threaded channels, manage tasks with AI-powered prioritization, and get contextual suggestions based on project activity — all in one unified interface.',
-    tech: ['Next.js', 'TypeScript', 'Node.js', 'WebSocket', 'AI/ML', 'Supabase', 'Vercel', 'Tailwind CSS'],
+    tech: ['Next.js', 'TypeScript', 'Node.js', 'WebSocket', 'AI/ML', 'MongoDB', 'Vercel', 'Tailwind CSS'],
     image: '⚡',
     color: 'from-blue-500/20 to-cyan-500/20',
     category: 'Full-Stack',
@@ -261,7 +261,7 @@ export const projects: Project[] = [
     image: '💳',
     color: 'from-emerald-500/20 to-teal-500/20',
     category: 'Full-Stack',
-    status: 'building',
+    status: 'planning',
     year: '2026',
     type: 'Financial Operating System',
     screenshots: [

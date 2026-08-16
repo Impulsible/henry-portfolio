@@ -178,8 +178,8 @@ const Home = () => {
     { icon: <SiSharp />, name: 'C#', color: '#239120' },
   ]
 
-  // Featured projects — IDs: 6 (School Portal), 7 (Handmaiden), 3 (Inventory), 5 (SmartBudget)
-  const featuredIds = [6, 7, 3, 5]
+  // Featured projects — IDs: 6 (School Portal), 4 (AI Collaboration Platform), 3 (Inventory), 5 (SmartBudget)
+  const featuredIds = [6, 4, 3, 5]
   const featuredProjects = featuredIds
     .map((id) => projects.find((p) => p.id === id))
     .filter(Boolean) as typeof projects
