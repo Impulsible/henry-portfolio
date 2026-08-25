@@ -26,12 +26,12 @@ export const projects: Project[] = [
       'A comprehensive Nigerian food delivery and logistics platform connecting vendors with customers. Built for the Nigerian market with local payment integration and delivery tracking.',
     longDescription:
       'Naija Snacks is a full-stack food delivery and logistics platform designed from the ground up for the Nigerian market. It addresses unique challenges like local payment preferences, address ambiguity, and network reliability. The platform features a multi-vendor system where food vendors can onboard, manage menus, and track earnings in real time.',
-    tech: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Express', 'Paystack'],
+    tech: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Paystack'],
     image: '🍲',
     color: 'from-green-500/20 to-emerald-500/20',
     category: 'Full-Stack',
     flag: '🇳🇬',
-    status: 'planning',
+    status: 'building',
     year: '2026',
     type: 'Web Application',
     screenshots: [
@@ -50,8 +50,8 @@ export const projects: Project[] = [
       'Integrating Nigerian payment gateways',
       'Building an accurate address system for Lagos',
     ],
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://naija-snacks.vercel.app/',
+    githubUrl: 'https://github.com/Impulsible/naija-snacks',
   },
   {
     id: 2,
