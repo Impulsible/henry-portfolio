@@ -31,7 +31,7 @@ export const projects: Project[] = [
     color: 'from-green-500/20 to-emerald-500/20',
     category: 'Full-Stack',
     flag: '🇳🇬',
-    status: 'building',
+    status: 'completed',
     year: '2026',
     type: 'Web Application',
     screenshots: [
