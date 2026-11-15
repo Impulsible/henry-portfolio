@@ -261,7 +261,7 @@ export const projects: Project[] = [
     image: '💳',
     color: 'from-emerald-500/20 to-teal-500/20',
     category: 'Full-Stack',
-    status: 'planning',
+    status: 'building',
     year: '2026',
     type: 'Financial Operating System',
     screenshots: [
@@ -282,9 +282,9 @@ export const projects: Project[] = [
       'Orchestrating multi-rail payment flows with idempotency and retry logic',
       'Creating an API sandbox that is both powerful and intuitive for developers',
     ],
-    liveUrl: '#',
-    githubUrl: '#',
-    flag: '🚀',
+    liveUrl: 'https://payzix.vercel.app/',
+    githubUrl: 'https://github.com/Impulsible/payzix',
+    flag: '🇳🇬',
   },
   {
     id: 9,
